@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82E5412A902FE4179EFB8C93 /* Pods_HideAndSeek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F9DCB09D7D5C91F43AE091 /* Pods_HideAndSeek.framework */; };
+		ABB1ED972208CCC200C5BE0E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1ED962208CCC200C5BE0E /* Coordinator.swift */; };
+		ABB1ED992208CD5A00C5BE0E /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1ED982208CD5A00C5BE0E /* Storyboarded.swift */; };
+		ABB1ED9B2208D1E900C5BE0E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1ED9A2208D1E900C5BE0E /* MainCoordinator.swift */; };
 		ABD000B122086A360022AA41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD000B022086A360022AA41 /* AppDelegate.swift */; };
 		ABD000B322086A360022AA41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD000B222086A360022AA41 /* ViewController.swift */; };
 		ABD000B622086A360022AA41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD000B422086A360022AA41 /* Main.storyboard */; };
 		ABD000B822086A390022AA41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD000B722086A390022AA41 /* Assets.xcassets */; };
 		ABD000BB22086A390022AA41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD000B922086A390022AA41 /* LaunchScreen.storyboard */; };
+		ABD000C322086D1B0022AA41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABD000C222086D1B0022AA41 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02F9DCB09D7D5C91F43AE091 /* Pods_HideAndSeek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HideAndSeek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CECEC06EB2AEAD6AE578714 /* Pods-HideAndSeek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HideAndSeek.release.xcconfig"; path = "Pods/Target Support Files/Pods-HideAndSeek/Pods-HideAndSeek.release.xcconfig"; sourceTree = "<group>"; };
+		ABB1ED962208CCC200C5BE0E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		ABB1ED982208CD5A00C5BE0E /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		ABB1ED9A2208D1E900C5BE0E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		ABD000AD22086A360022AA41 /* HideAndSeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HideAndSeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD000B022086A360022AA41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABD000B222086A360022AA41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +32,8 @@
 		ABD000B722086A390022AA41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABD000BA22086A390022AA41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABD000BC22086A390022AA41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABD000C222086D1B0022AA41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F107569CFA65F4A3B998F6C6 /* Pods-HideAndSeek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HideAndSeek.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HideAndSeek/Pods-HideAndSeek.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82E5412A902FE4179EFB8C93 /* Pods_HideAndSeek.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +53,8 @@
 			children = (
 				ABD000AF22086A360022AA41 /* HideAndSeek */,
 				ABD000AE22086A360022AA41 /* Products */,
+				CD90B899861043A25B476A01 /* Pods */,
+				C74699F8B8F4EFED1442D47F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +70,34 @@
 			isa = PBXGroup;
 			children = (
 				ABD000B022086A360022AA41 /* AppDelegate.swift */,
+				ABB1ED962208CCC200C5BE0E /* Coordinator.swift */,
+				ABB1ED982208CD5A00C5BE0E /* Storyboarded.swift */,
+				ABB1ED9A2208D1E900C5BE0E /* MainCoordinator.swift */,
 				ABD000B222086A360022AA41 /* ViewController.swift */,
 				ABD000B422086A360022AA41 /* Main.storyboard */,
 				ABD000B722086A390022AA41 /* Assets.xcassets */,
 				ABD000B922086A390022AA41 /* LaunchScreen.storyboard */,
+				ABD000C222086D1B0022AA41 /* GoogleService-Info.plist */,
 				ABD000BC22086A390022AA41 /* Info.plist */,
 			);
 			path = HideAndSeek;
+			sourceTree = "<group>";
+		};
+		C74699F8B8F4EFED1442D47F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02F9DCB09D7D5C91F43AE091 /* Pods_HideAndSeek.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD90B899861043A25B476A01 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F107569CFA65F4A3B998F6C6 /* Pods-HideAndSeek.debug.xcconfig */,
+				9CECEC06EB2AEAD6AE578714 /* Pods-HideAndSeek.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABD000BF22086A390022AA41 /* Build configuration list for PBXNativeTarget "HideAndSeek" */;
 			buildPhases = (
+				3244079B522D392C10C9A1C7 /* [CP] Check Pods Manifest.lock */,
 				ABD000A922086A360022AA41 /* Sources */,
 				ABD000AA22086A360022AA41 /* Frameworks */,
 				ABD000AB22086A360022AA41 /* Resources */,
+				413397C6B45B3962C0B18227 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,12 +161,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABD000BB22086A390022AA41 /* LaunchScreen.storyboard in Resources */,
+				ABD000C322086D1B0022AA41 /* GoogleService-Info.plist in Resources */,
 				ABD000B822086A390022AA41 /* Assets.xcassets in Resources */,
 				ABD000B622086A360022AA41 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3244079B522D392C10C9A1C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HideAndSeek-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		413397C6B45B3962C0B18227 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HideAndSeek/Pods-HideAndSeek-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HideAndSeek/Pods-HideAndSeek-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ABD000A922086A360022AA41 /* Sources */ = {
@@ -137,6 +219,9 @@
 			files = (
 				ABD000B322086A360022AA41 /* ViewController.swift in Sources */,
 				ABD000B122086A360022AA41 /* AppDelegate.swift in Sources */,
+				ABB1ED972208CCC200C5BE0E /* Coordinator.swift in Sources */,
+				ABB1ED9B2208D1E900C5BE0E /* MainCoordinator.swift in Sources */,
+				ABB1ED992208CD5A00C5BE0E /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +365,7 @@
 		};
 		ABD000C022086A390022AA41 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F107569CFA65F4A3B998F6C6 /* Pods-HideAndSeek.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +384,7 @@
 		};
 		ABD000C122086A390022AA41 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CECEC06EB2AEAD6AE578714 /* Pods-HideAndSeek.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
