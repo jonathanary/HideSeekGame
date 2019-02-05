@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AFABC666A1D992407312958B0E300BEA"
+               BlueprintIdentifier = "9B8F10628C3EC5CEC5FE264306816076"
                BlueprintName = "Pods-HideAndSeek"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Pods-HideAndSeek.framework">

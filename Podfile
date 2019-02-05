@@ -11,5 +11,6 @@ target 'HideAndSeek' do
   
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'FirebaseUI/Auth'
 
 end
