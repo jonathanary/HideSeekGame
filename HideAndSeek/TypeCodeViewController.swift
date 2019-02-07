@@ -7,13 +7,39 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
-class TypeCodeViewController: UIViewController {
+class TypeCodeViewController: UIViewController, Storyboarded {
+    
+    let reference = Database.database().reference()
+    let userID = Auth.auth().currentUser?.uid
 
+    @IBOutlet weak var codeTextField: UITextField!
+    weak var coordinator: MainCoordinator?
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
+    @IBAction func joinGameTapped(_ sender: Any) {
+        let code = codeTextField.text
+        if code == "" {
+            //reference.child("someID/name").setValue("Jonathan")
+            #warning("Handle the error")
+        } else {
+            reference.child("users").child("thisIsATest").child("code").observeSingleEvent(of: .value) { (snapshot) in
+                let codeFromDB = snapshot.value as! String
+                print(codeFromDB)
+                if codeFromDB == code! {
+                    if let id = self.userID {
+                        self.reference.child("users").child("normalPlayers").setValue(id)
+                    }
+                    
+                } else {
+                    // handle error
+                }
+            }
+        }
+    }
 }

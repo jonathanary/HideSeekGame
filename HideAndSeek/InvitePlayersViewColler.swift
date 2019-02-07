@@ -14,6 +14,7 @@ class InvitePlayersViewColler: UIViewController, Storyboarded {
 
     weak var coordinator: MainCoordinator?
     let reference = Database.database().reference()
+    let userID = Auth.auth().currentUser?.uid
     
     // MARK: FIREBASE TUTORIAL
     
@@ -33,24 +34,45 @@ class InvitePlayersViewColler: UIViewController, Storyboarded {
     //            let data = snapshot.value as? [String:Any]
     //            print(data! as Any)
     //        }
+    // aryjonathan90@gmail.com
     @IBOutlet weak var codeTextField: UITextField!
+    @IBOutlet weak var codeLabel: UILabel!
+    @IBOutlet weak var saveLabel: UIButton!
+    @IBOutlet weak var instructionsLabel: UILabel!
+    @IBOutlet weak var startGameLabel: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        codeLabel.isHidden = true
+        startGameLabel.isHidden = true
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func saveAndStartTapped(_ sender: Any) {
+    @IBAction func saveTapped(_ sender: Any) {
         
         let code = codeTextField.text
         if code == "" {
-            reference.child("someID/name").setValue("Jonathan")
-            //Handle error
+            //reference.child("someID/name").setValue("Jonathan")
+            #warning("Handle the error")
         } else {
-            
-            reference.child("someID/name").setValue(codeTextField.text)
+            codeTextField.isHidden = true
+            let trimmedCode = code!.replacingOccurrences(of: " ", with: "").lowercased()
+            reference.child("users").child("thisIsATest").setValue(["username": "Somebody", "code": trimmedCode])
+            //reference.child("someID/name").setValue(codeTextField.text)
+            reference.child("users").child("thisIsATest").child("code").observeSingleEvent(of: .value) { (snapshot) in
+                let newCode = snapshot.value as! String
+                print(newCode)
+                self.codeLabel.text = newCode
+                self.codeLabel.isHidden = false
+                self.saveLabel.isHidden = true
+                self.instructionsLabel.text = "Tell your code so others can join!"
+                self.startGameLabel.isHidden = false
+            }
         }
+    }
+    
+    
+    @IBAction func startGameTapped(_ sender: Any) {
     }
 }

@@ -23,7 +23,7 @@ class ChooseViewController: UIViewController, Storyboarded {
     }
     
     @IBAction func imAPlayerTapped(_ sender: Any) {
-        coordinator?.goToCodeView()
+        coordinator?.goToTypeCodeView()
     }
     
     

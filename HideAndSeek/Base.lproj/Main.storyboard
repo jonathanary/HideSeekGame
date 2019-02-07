@@ -109,21 +109,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="SZ1-jg-oNy">
-                                <rect key="frame" x="47" y="377" width="320" height="142.5"/>
+                                <rect key="frame" x="87" y="377" width="240.5" height="142.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="eYx-a6-Qr2">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240.5" height="80.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write a code so others can join!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfs-hX-o30">
-                                                <rect key="frame" x="40" y="0.0" width="240.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="240.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="write your code here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sVm-MS-rj9">
-                                                <rect key="frame" x="0.0" y="50.5" width="320" height="30"/>
+                                                <rect key="frame" x="20" y="50.5" width="200" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="320" id="4Wk-Sp-9fS"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="4Wk-Sp-9fS"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -132,16 +132,16 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Coc-tx-8YO">
-                                        <rect key="frame" x="95" y="112.5" width="130" height="30"/>
-                                        <state key="normal" title="Save &amp; Start Game"/>
+                                        <rect key="frame" x="103" y="112.5" width="34" height="30"/>
+                                        <state key="normal" title="Save"/>
                                         <connections>
-                                            <action selector="saveAndStartTapped:" destination="juE-uR-F7w" eventType="touchUpInside" id="ZqQ-iY-ABL"/>
+                                            <action selector="saveTapped:" destination="juE-uR-F7w" eventType="touchUpInside" id="ZqQ-iY-ABL"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyh-W4-DeN">
-                                <rect key="frame" x="16" y="100" width="382" height="41"/>
+                                <rect key="frame" x="167" y="100" width="80.5" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="8ER-qR-C2s"/>
                                 </constraints>
@@ -149,11 +149,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVL-0m-dzH">
+                                <rect key="frame" x="152.5" y="535" width="109" height="30"/>
+                                <state key="normal" title="Start the Game!"/>
+                                <connections>
+                                    <action selector="startGameTapped:" destination="juE-uR-F7w" eventType="touchUpInside" id="6rM-Ez-GxC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Iu3-IK-xsS" firstAttribute="trailing" secondItem="Tyh-W4-DeN" secondAttribute="trailing" constant="16" id="3sh-uL-bH2"/>
-                            <constraint firstItem="Tyh-W4-DeN" firstAttribute="leading" secondItem="Iu3-IK-xsS" secondAttribute="leading" constant="16" id="ByL-Tk-jZz"/>
+                            <constraint firstItem="hVL-0m-dzH" firstAttribute="top" secondItem="SZ1-jg-oNy" secondAttribute="bottom" constant="15.5" id="6Nh-Rs-Rkg"/>
+                            <constraint firstItem="hVL-0m-dzH" firstAttribute="centerX" secondItem="fzZ-AK-AE1" secondAttribute="centerX" id="9bJ-d1-QbX"/>
                             <constraint firstItem="SZ1-jg-oNy" firstAttribute="centerX" secondItem="fzZ-AK-AE1" secondAttribute="centerX" id="ZZx-Gd-mtp"/>
                             <constraint firstItem="SZ1-jg-oNy" firstAttribute="centerY" secondItem="fzZ-AK-AE1" secondAttribute="centerY" id="dBH-EV-hXA"/>
                             <constraint firstItem="Tyh-W4-DeN" firstAttribute="centerX" secondItem="fzZ-AK-AE1" secondAttribute="centerX" id="gBf-aT-zum"/>
@@ -162,7 +169,11 @@
                         <viewLayoutGuide key="safeArea" id="Iu3-IK-xsS"/>
                     </view>
                     <connections>
+                        <outlet property="codeLabel" destination="Tyh-W4-DeN" id="Qnb-yT-fxI"/>
                         <outlet property="codeTextField" destination="sVm-MS-rj9" id="Swu-6I-g4O"/>
+                        <outlet property="instructionsLabel" destination="xfs-hX-o30" id="C02-CY-uAo"/>
+                        <outlet property="saveLabel" destination="Coc-tx-8YO" id="EEl-Rx-esB"/>
+                        <outlet property="startGameLabel" destination="hVL-0m-dzH" id="YfY-uT-o55"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nrl-9k-snF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -190,9 +201,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="write the code here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ozG-tW-2lA">
-                                                <rect key="frame" x="3" y="50.5" width="320" height="30"/>
+                                                <rect key="frame" x="63" y="50.5" width="200" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="320" id="G3n-eu-L3v"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="G3n-eu-L3v"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -203,11 +214,14 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YA-ka-osu">
                                         <rect key="frame" x="126.5" y="112.5" width="73" height="30"/>
                                         <state key="normal" title="Join Game"/>
+                                        <connections>
+                                            <action selector="joinGameTapped:" destination="LAR-C4-WVo" eventType="touchUpInside" id="zdn-Rj-1wJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMP-02-vo7">
-                                <rect key="frame" x="16" y="100" width="382" height="41"/>
+                                <rect key="frame" x="167" y="100" width="80.5" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="gVs-fN-n2Q"/>
                                 </constraints>
@@ -221,12 +235,13 @@
                             <constraint firstItem="xLh-fN-Jzw" firstAttribute="centerY" secondItem="wzh-7C-Ksz" secondAttribute="centerY" id="184-Bn-7Sv"/>
                             <constraint firstItem="xLh-fN-Jzw" firstAttribute="centerX" secondItem="wzh-7C-Ksz" secondAttribute="centerX" id="EmI-lt-I1z"/>
                             <constraint firstItem="OMP-02-vo7" firstAttribute="centerX" secondItem="wzh-7C-Ksz" secondAttribute="centerX" id="EmM-zX-auU"/>
-                            <constraint firstItem="NN0-3h-U9E" firstAttribute="trailing" secondItem="OMP-02-vo7" secondAttribute="trailing" constant="16" id="Mgh-Py-8BR"/>
-                            <constraint firstItem="OMP-02-vo7" firstAttribute="leading" secondItem="NN0-3h-U9E" secondAttribute="leading" constant="16" id="Oex-bf-R0y"/>
                             <constraint firstItem="OMP-02-vo7" firstAttribute="top" secondItem="NN0-3h-U9E" secondAttribute="top" constant="56" id="mWi-8r-rdx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NN0-3h-U9E"/>
                     </view>
+                    <connections>
+                        <outlet property="codeTextField" destination="ozG-tW-2lA" id="v2f-uR-MyG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uuB-7I-HJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
