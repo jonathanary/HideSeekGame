@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		82E5412A902FE4179EFB8C93 /* Pods_HideAndSeek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F9DCB09D7D5C91F43AE091 /* Pods_HideAndSeek.framework */; };
-		AB3E57EB2208E4CE002C3C4A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57EA2208E4CE002C3C4A /* LoginViewController.swift */; };
+		AB3E57EB2208E4CE002C3C4A /* ChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57EA2208E4CE002C3C4A /* ChooseViewController.swift */; };
+		AB3E57ED220A2B64002C3C4A /* FireBaseAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57EC220A2B64002C3C4A /* FireBaseAuthDelegate.swift */; };
+		AB3E57EF220B2C8B002C3C4A /* InvitePlayersViewColler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57EE220B2C8B002C3C4A /* InvitePlayersViewColler.swift */; };
+		AB3E57F1220B33E8002C3C4A /* TypeCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57F0220B33E8002C3C4A /* TypeCodeViewController.swift */; };
+		AB3E57F3220B39D4002C3C4A /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57F2220B39D4002C3C4A /* Errors.swift */; };
 		ABB1ED972208CCC200C5BE0E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1ED962208CCC200C5BE0E /* Coordinator.swift */; };
 		ABB1ED992208CD5A00C5BE0E /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1ED982208CD5A00C5BE0E /* Storyboarded.swift */; };
 		ABB1ED9B2208D1E900C5BE0E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1ED9A2208D1E900C5BE0E /* MainCoordinator.swift */; };
@@ -23,7 +27,11 @@
 /* Begin PBXFileReference section */
 		02F9DCB09D7D5C91F43AE091 /* Pods_HideAndSeek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HideAndSeek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CECEC06EB2AEAD6AE578714 /* Pods-HideAndSeek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HideAndSeek.release.xcconfig"; path = "Pods/Target Support Files/Pods-HideAndSeek/Pods-HideAndSeek.release.xcconfig"; sourceTree = "<group>"; };
-		AB3E57EA2208E4CE002C3C4A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AB3E57EA2208E4CE002C3C4A /* ChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseViewController.swift; sourceTree = "<group>"; };
+		AB3E57EC220A2B64002C3C4A /* FireBaseAuthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseAuthDelegate.swift; sourceTree = "<group>"; };
+		AB3E57EE220B2C8B002C3C4A /* InvitePlayersViewColler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitePlayersViewColler.swift; sourceTree = "<group>"; };
+		AB3E57F0220B33E8002C3C4A /* TypeCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCodeViewController.swift; sourceTree = "<group>"; };
+		AB3E57F2220B39D4002C3C4A /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		ABB1ED962208CCC200C5BE0E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		ABB1ED982208CD5A00C5BE0E /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		ABB1ED9A2208D1E900C5BE0E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -72,11 +80,15 @@
 			isa = PBXGroup;
 			children = (
 				ABD000B022086A360022AA41 /* AppDelegate.swift */,
+				AB3E57F2220B39D4002C3C4A /* Errors.swift */,
 				ABB1ED962208CCC200C5BE0E /* Coordinator.swift */,
 				ABB1ED982208CD5A00C5BE0E /* Storyboarded.swift */,
 				ABB1ED9A2208D1E900C5BE0E /* MainCoordinator.swift */,
 				ABD000B222086A360022AA41 /* ViewController.swift */,
-				AB3E57EA2208E4CE002C3C4A /* LoginViewController.swift */,
+				AB3E57EC220A2B64002C3C4A /* FireBaseAuthDelegate.swift */,
+				AB3E57EA2208E4CE002C3C4A /* ChooseViewController.swift */,
+				AB3E57EE220B2C8B002C3C4A /* InvitePlayersViewColler.swift */,
+				AB3E57F0220B33E8002C3C4A /* TypeCodeViewController.swift */,
 				ABD000B422086A360022AA41 /* Main.storyboard */,
 				ABD000B722086A390022AA41 /* Assets.xcassets */,
 				ABD000B922086A390022AA41 /* LaunchScreen.storyboard */,
@@ -241,11 +253,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB3E57EB2208E4CE002C3C4A /* LoginViewController.swift in Sources */,
+				AB3E57EB2208E4CE002C3C4A /* ChooseViewController.swift in Sources */,
 				ABD000B322086A360022AA41 /* ViewController.swift in Sources */,
+				AB3E57F1220B33E8002C3C4A /* TypeCodeViewController.swift in Sources */,
 				ABD000B122086A360022AA41 /* AppDelegate.swift in Sources */,
 				ABB1ED972208CCC200C5BE0E /* Coordinator.swift in Sources */,
 				ABB1ED9B2208D1E900C5BE0E /* MainCoordinator.swift in Sources */,
+				AB3E57F3220B39D4002C3C4A /* Errors.swift in Sources */,
+				AB3E57EF220B2C8B002C3C4A /* InvitePlayersViewColler.swift in Sources */,
+				AB3E57ED220A2B64002C3C4A /* FireBaseAuthDelegate.swift in Sources */,
 				ABB1ED992208CD5A00C5BE0E /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

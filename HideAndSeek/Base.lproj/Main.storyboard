@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="c6h-og-Kxi">
-                                <rect key="frame" x="151.5" y="403" width="111.5" height="90.5"/>
+                                <rect key="frame" x="151.5" y="403" width="111" height="90.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HIde and Seek" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1J1-aP-hrz">
-                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hide and Seek" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1J1-aP-hrz">
+                                        <rect key="frame" x="0.0" y="0.0" width="111" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -49,25 +49,49 @@
             </objects>
             <point key="canvasLocation" x="97" y="122"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Choose View Controller-->
         <scene sceneID="FGO-e1-Y9g">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="Xzi-cp-B3I" customClass="LoginViewController" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseViewController" id="Xzi-cp-B3I" customClass="ChooseViewController" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="db0-xm-ku6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esd-lb-ENM">
-                                <rect key="frame" x="169" y="437.5" width="76" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="sxd-D3-5WI">
+                                <rect key="frame" x="82" y="398.5" width="250" height="99.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Chose your character!" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esd-lb-ENM">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="2sf-Ax-Lbs">
+                                        <rect key="frame" x="38.5" y="69.5" width="173" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9k-N9-rAV">
+                                                <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
+                                                <state key="normal" title="I'm IT!"/>
+                                                <connections>
+                                                    <action selector="imItButtonTapped:" destination="Xzi-cp-B3I" eventType="touchUpInside" id="mfk-ot-wg5"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VW1-q8-qYr">
+                                                <rect key="frame" x="90" y="0.0" width="83" height="30"/>
+                                                <state key="normal" title="I'm a Player!"/>
+                                                <connections>
+                                                    <action selector="imAPlayerTapped:" destination="Xzi-cp-B3I" eventType="touchUpInside" id="3sO-jj-1WF"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="esd-lb-ENM" firstAttribute="centerX" secondItem="db0-xm-ku6" secondAttribute="centerX" id="5MI-ip-9Et"/>
-                            <constraint firstItem="esd-lb-ENM" firstAttribute="centerY" secondItem="db0-xm-ku6" secondAttribute="centerY" id="hRX-aK-0di"/>
+                            <constraint firstItem="sxd-D3-5WI" firstAttribute="centerY" secondItem="db0-xm-ku6" secondAttribute="centerY" id="N5W-91-nH6"/>
+                            <constraint firstItem="sxd-D3-5WI" firstAttribute="centerX" secondItem="db0-xm-ku6" secondAttribute="centerX" id="fK5-Ac-nlq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Uu-ZY-LEi"/>
                     </view>
@@ -75,6 +99,138 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ou-IS-PeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="891" y="122"/>
+        </scene>
+        <!--Invite Players View Coller-->
+        <scene sceneID="O0Z-Wy-2Tj">
+            <objects>
+                <viewController storyboardIdentifier="InvitePlayersViewColler" id="juE-uR-F7w" customClass="InvitePlayersViewColler" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fzZ-AK-AE1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="SZ1-jg-oNy">
+                                <rect key="frame" x="47" y="377" width="320" height="142.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="eYx-a6-Qr2">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write a code so others can join!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfs-hX-o30">
+                                                <rect key="frame" x="40" y="0.0" width="240.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="write your code here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sVm-MS-rj9">
+                                                <rect key="frame" x="0.0" y="50.5" width="320" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="320" id="4Wk-Sp-9fS"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Coc-tx-8YO">
+                                        <rect key="frame" x="95" y="112.5" width="130" height="30"/>
+                                        <state key="normal" title="Save &amp; Start Game"/>
+                                        <connections>
+                                            <action selector="saveAndStartTapped:" destination="juE-uR-F7w" eventType="touchUpInside" id="ZqQ-iY-ABL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyh-W4-DeN">
+                                <rect key="frame" x="16" y="100" width="382" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="8ER-qR-C2s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Iu3-IK-xsS" firstAttribute="trailing" secondItem="Tyh-W4-DeN" secondAttribute="trailing" constant="16" id="3sh-uL-bH2"/>
+                            <constraint firstItem="Tyh-W4-DeN" firstAttribute="leading" secondItem="Iu3-IK-xsS" secondAttribute="leading" constant="16" id="ByL-Tk-jZz"/>
+                            <constraint firstItem="SZ1-jg-oNy" firstAttribute="centerX" secondItem="fzZ-AK-AE1" secondAttribute="centerX" id="ZZx-Gd-mtp"/>
+                            <constraint firstItem="SZ1-jg-oNy" firstAttribute="centerY" secondItem="fzZ-AK-AE1" secondAttribute="centerY" id="dBH-EV-hXA"/>
+                            <constraint firstItem="Tyh-W4-DeN" firstAttribute="centerX" secondItem="fzZ-AK-AE1" secondAttribute="centerX" id="gBf-aT-zum"/>
+                            <constraint firstItem="Tyh-W4-DeN" firstAttribute="top" secondItem="Iu3-IK-xsS" secondAttribute="top" constant="56" id="gRu-MG-4cJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Iu3-IK-xsS"/>
+                    </view>
+                    <connections>
+                        <outlet property="codeTextField" destination="sVm-MS-rj9" id="Swu-6I-g4O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nrl-9k-snF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1804" y="-258"/>
+        </scene>
+        <!--Type Code View Controller-->
+        <scene sceneID="KoV-ZQ-EHl">
+            <objects>
+                <viewController storyboardIdentifier="TypeCodeViewController" id="LAR-C4-WVo" customClass="TypeCodeViewController" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wzh-7C-Ksz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="xLh-fN-Jzw">
+                                <rect key="frame" x="44" y="377" width="326.5" height="142.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="qlz-vz-YT6">
+                                        <rect key="frame" x="0.0" y="0.0" width="326.5" height="80.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type in the code so you can join the game!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zve-7A-KI1">
+                                                <rect key="frame" x="0.0" y="0.0" width="326.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="write the code here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ozG-tW-2lA">
+                                                <rect key="frame" x="3" y="50.5" width="320" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="320" id="G3n-eu-L3v"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YA-ka-osu">
+                                        <rect key="frame" x="126.5" y="112.5" width="73" height="30"/>
+                                        <state key="normal" title="Join Game"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMP-02-vo7">
+                                <rect key="frame" x="16" y="100" width="382" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="gVs-fN-n2Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xLh-fN-Jzw" firstAttribute="centerY" secondItem="wzh-7C-Ksz" secondAttribute="centerY" id="184-Bn-7Sv"/>
+                            <constraint firstItem="xLh-fN-Jzw" firstAttribute="centerX" secondItem="wzh-7C-Ksz" secondAttribute="centerX" id="EmI-lt-I1z"/>
+                            <constraint firstItem="OMP-02-vo7" firstAttribute="centerX" secondItem="wzh-7C-Ksz" secondAttribute="centerX" id="EmM-zX-auU"/>
+                            <constraint firstItem="NN0-3h-U9E" firstAttribute="trailing" secondItem="OMP-02-vo7" secondAttribute="trailing" constant="16" id="Mgh-Py-8BR"/>
+                            <constraint firstItem="OMP-02-vo7" firstAttribute="leading" secondItem="NN0-3h-U9E" secondAttribute="leading" constant="16" id="Oex-bf-R0y"/>
+                            <constraint firstItem="OMP-02-vo7" firstAttribute="top" secondItem="NN0-3h-U9E" secondAttribute="top" constant="56" id="mWi-8r-rdx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NN0-3h-U9E"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uuB-7I-HJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1803" y="445"/>
         </scene>
     </scenes>
 </document>

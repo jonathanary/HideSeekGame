@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, Storyboarded {
+class ChooseViewController: UIViewController, Storyboarded {
 
     weak var coordinator: MainCoordinator?
     
@@ -17,4 +17,14 @@ class LoginViewController: UIViewController, Storyboarded {
         
     }
 
+    
+    @IBAction func imItButtonTapped(_ sender: Any) {
+        coordinator?.goToCodeView()
+    }
+    
+    @IBAction func imAPlayerTapped(_ sender: Any) {
+        coordinator?.goToCodeView()
+    }
+    
+    
 }

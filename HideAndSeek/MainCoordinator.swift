@@ -22,9 +22,16 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
     
-    func goToLoginView() {
-        let vc = LoginViewController.instantiate()
+    func goToLoginAndChoseView() {
+        let vc = ChooseViewController.instantiate()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func goToCodeView() {
+        let vc = InvitePlayersViewColler.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
 }
