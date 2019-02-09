@@ -40,6 +40,7 @@ class InvitePlayersViewColler: UIViewController, Storyboarded {
     @IBOutlet weak var saveLabel: UIButton!
     @IBOutlet weak var instructionsLabel: UILabel!
     @IBOutlet weak var startGameLabel: UIButton!
+    var isPlayer = false
     
     
     override func viewDidLoad() {
@@ -74,5 +75,6 @@ class InvitePlayersViewColler: UIViewController, Storyboarded {
     
     
     @IBAction func startGameTapped(_ sender: Any) {
+        coordinator?.goToTimerView(asPlayer: isPlayer)
     }
 }

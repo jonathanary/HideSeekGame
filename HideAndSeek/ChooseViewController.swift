@@ -12,6 +12,7 @@ class ChooseViewController: UIViewController, Storyboarded {
 
     weak var coordinator: MainCoordinator?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,10 +20,12 @@ class ChooseViewController: UIViewController, Storyboarded {
 
     
     @IBAction func imItButtonTapped(_ sender: Any) {
+       
         coordinator?.goToCodeView()
     }
     
     @IBAction func imAPlayerTapped(_ sender: Any) {
+       
         coordinator?.goToTypeCodeView()
     }
     

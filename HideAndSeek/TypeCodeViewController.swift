@@ -14,9 +14,12 @@ class TypeCodeViewController: UIViewController, Storyboarded {
     
     let reference = Database.database().reference()
     let userID = Auth.auth().currentUser?.uid
+    var isPlayer = true
 
     @IBOutlet weak var codeTextField: UITextField!
+    
     weak var coordinator: MainCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +37,7 @@ class TypeCodeViewController: UIViewController, Storyboarded {
                 if codeFromDB == code! {
                     if let id = self.userID {
                         self.reference.child("users").child("normalPlayers").setValue(id)
+                        self.coordinator?.goToTimerView(asPlayer: self.isPlayer)
                     }
                     
                 } else {

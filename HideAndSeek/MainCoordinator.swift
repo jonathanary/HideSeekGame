@@ -40,4 +40,11 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
+    func goToTimerView(asPlayer: Bool) {
+        let vc = TimerViewController.instantiate()
+        vc.isPlayer = asPlayer
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
 }

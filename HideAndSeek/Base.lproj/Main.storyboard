@@ -67,17 +67,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="2sf-Ax-Lbs">
-                                        <rect key="frame" x="38.5" y="69.5" width="173" height="30"/>
+                                        <rect key="frame" x="40.5" y="69.5" width="169" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9k-N9-rAV">
-                                                <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
-                                                <state key="normal" title="I'm IT!"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="38" height="30"/>
+                                                <state key="normal" title="I'm It!"/>
                                                 <connections>
                                                     <action selector="imItButtonTapped:" destination="Xzi-cp-B3I" eventType="touchUpInside" id="mfk-ot-wg5"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VW1-q8-qYr">
-                                                <rect key="frame" x="90" y="0.0" width="83" height="30"/>
+                                                <rect key="frame" x="86" y="0.0" width="83" height="30"/>
                                                 <state key="normal" title="I'm a Player!"/>
                                                 <connections>
                                                     <action selector="imAPlayerTapped:" destination="Xzi-cp-B3I" eventType="touchUpInside" id="3sO-jj-1WF"/>
@@ -246,6 +246,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uuB-7I-HJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1803" y="445"/>
+        </scene>
+        <!--Timer View Controller-->
+        <scene sceneID="eCJ-iZ-EuR">
+            <objects>
+                <viewController storyboardIdentifier="TimerViewController" id="tPa-6h-DZ0" customClass="TimerViewController" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u5O-h1-Way">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="VAE-pV-IHU">
+                                <rect key="frame" x="140" y="350" width="134" height="196"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCm-j0-Uu9">
+                                        <rect key="frame" x="9" y="0.0" width="116.5" height="57.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ia0-PS-w7A">
+                                        <rect key="frame" x="47.5" y="89.5" width="39.5" height="38.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjg-aW-Uv4">
+                                        <rect key="frame" x="0.0" y="160" width="134" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Start the Timer!"/>
+                                        <connections>
+                                            <action selector="startTimerTapped:" destination="tPa-6h-DZ0" eventType="touchUpInside" id="RDH-As-Umn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VAE-pV-IHU" firstAttribute="centerY" secondItem="u5O-h1-Way" secondAttribute="centerY" id="tEv-PJ-Khx"/>
+                            <constraint firstItem="VAE-pV-IHU" firstAttribute="centerX" secondItem="u5O-h1-Way" secondAttribute="centerX" id="wdK-nO-UMf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Yyf-yT-6qk"/>
+                    </view>
+                    <connections>
+                        <outlet property="secondsLabel" destination="ia0-PS-w7A" id="GwQ-PM-RdQ"/>
+                        <outlet property="startTimeLabel" destination="Hjg-aW-Uv4" id="auD-ed-WU5"/>
+                        <outlet property="timerLabel" destination="OCm-j0-Uu9" id="Vbt-cc-7EP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UBt-WW-7Be" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2628" y="126"/>
         </scene>
     </scenes>
 </document>
