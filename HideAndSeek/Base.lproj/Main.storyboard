@@ -279,16 +279,30 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="196" id="64D-px-EHC"/>
+                                </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Players joined with your code:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSt-NT-JNP">
+                                <rect key="frame" x="20" y="44" width="374" height="298"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="jSt-NT-JNP" firstAttribute="top" secondItem="Yyf-yT-6qk" secondAttribute="top" id="YtO-Zc-5kl"/>
+                            <constraint firstItem="Yyf-yT-6qk" firstAttribute="trailing" secondItem="jSt-NT-JNP" secondAttribute="trailing" constant="20" id="hOS-QU-YCM"/>
+                            <constraint firstItem="VAE-pV-IHU" firstAttribute="top" secondItem="jSt-NT-JNP" secondAttribute="bottom" constant="8" id="p2V-tB-oNR"/>
+                            <constraint firstItem="jSt-NT-JNP" firstAttribute="leading" secondItem="Yyf-yT-6qk" secondAttribute="leading" constant="20" id="qTi-dE-2SN"/>
                             <constraint firstItem="VAE-pV-IHU" firstAttribute="centerY" secondItem="u5O-h1-Way" secondAttribute="centerY" id="tEv-PJ-Khx"/>
                             <constraint firstItem="VAE-pV-IHU" firstAttribute="centerX" secondItem="u5O-h1-Way" secondAttribute="centerX" id="wdK-nO-UMf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yyf-yT-6qk"/>
                     </view>
                     <connections>
+                        <outlet property="playersNameListLabel" destination="jSt-NT-JNP" id="iwJ-Mg-HuB"/>
                         <outlet property="secondsLabel" destination="ia0-PS-w7A" id="GwQ-PM-RdQ"/>
                         <outlet property="startTimeLabel" destination="Hjg-aW-Uv4" id="auD-ed-WU5"/>
                         <outlet property="timerLabel" destination="OCm-j0-Uu9" id="Vbt-cc-7EP"/>
@@ -296,7 +310,55 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBt-WW-7Be" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2628" y="126"/>
+            <point key="canvasLocation" x="2626.0869565217395" y="125.89285714285714"/>
+        </scene>
+        <!--Hiders View Controller-->
+        <scene sceneID="Cbu-pj-do5">
+            <objects>
+                <viewController storyboardIdentifier="HIdersViewController" id="h6W-Hx-xp3" customClass="HidersViewController" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OyB-uW-55f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HIders' View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mD-rM-fI4">
+                                <rect key="frame" x="159" y="194" width="96" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="bLs-4U-PmD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AJq-Ek-uke" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3361" y="453"/>
+        </scene>
+        <!--Seekers View Controller-->
+        <scene sceneID="HO0-BG-I7d">
+            <objects>
+                <viewController storyboardIdentifier="SeekersViewController" id="2cG-Ui-iUP" customClass="SeekersViewController" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ntH-od-Tgy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seeker's View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xxu-8M-4nf">
+                                <rect key="frame" x="160" y="254" width="107" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Rd7-0r-rvT"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uVU-aV-pqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3362" y="-258"/>
         </scene>
     </scenes>
 </document>

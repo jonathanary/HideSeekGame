@@ -7,29 +7,34 @@
 //
 
 import UIKit
+import FirebaseDatabase
+
 
 class TimerViewController: UIViewController, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     var isPlayer = true
+    
+    let date = GameDate.shared()
+    #warning("the reference should be the current date+code")
+    var reference = Database.database().reference()
 
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var secondsLabel: UILabel!
     @IBOutlet weak var startTimeLabel: UIButton!
+    @IBOutlet weak var playersNameListLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        reference = reference.child(date)
         if isPlayer == true {
             timerLabel.text = "Run and Hide!"
             startTimeLabel.isHidden = true
         } else {
-            //
+            
+            playersNameListLabel.text = "Players joined with your code:"
         }
-    }
-    
-    @IBAction func startTimerTapped(_ sender: Any) {
-        timerLabel.text = "Wait for it!"
-        startTimeLabel.isHidden = true
+        
         var gameTimer: Timer!
         var runCount = 60
         gameTimer  = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
@@ -38,10 +43,22 @@ class TimerViewController: UIViewController, Storyboarded {
             if runCount == 0 {
                 gameTimer.invalidate()
                 
-                // coordinator new view
+                // coordinator
+                if self.isPlayer == true  && self.view == self {
+                    self.coordinator?.goToHidersView()
+                } else {
+                    self.coordinator?.goToSeekersView()
+                }
                 
             }
         }
+        
+    }
+    
+    @IBAction func startTimerTapped(_ sender: Any) { //Not sure if we need any of this
+        timerLabel.text = "Wait for it!"
+        startTimeLabel.isHidden = true
+       
     }
 }
 

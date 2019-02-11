@@ -44,7 +44,7 @@ extension ViewController: FUIAuthDelegate {
         // Check for errors
         guard error == nil else { return }
         if let uid = authDataResult?.user.uid {
-            let player = Player(id: uid, name: "Name", status: .unknown)
+            //let player = Player(id: uid, name: "Name")
         }
         
         

@@ -12,7 +12,8 @@ import FirebaseAuth
 
 class TypeCodeViewController: UIViewController, Storyboarded {
     
-    let reference = Database.database().reference()
+    let date = GameDate.shared()
+    var reference = Database.database().reference()
     let userID = Auth.auth().currentUser?.uid
     var isPlayer = true
 
@@ -22,7 +23,7 @@ class TypeCodeViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        reference = reference.child(date)
     }
 
     @IBAction func joinGameTapped(_ sender: Any) {
@@ -31,13 +32,16 @@ class TypeCodeViewController: UIViewController, Storyboarded {
             //reference.child("someID/name").setValue("Jonathan")
             #warning("Handle the error")
         } else {
-            reference.child("users").child("thisIsATest").child("code").observeSingleEvent(of: .value) { (snapshot) in
+            reference.child("code").observeSingleEvent(of: .value) { (snapshot) in
                 let codeFromDB = snapshot.value as! String
                 print(codeFromDB)
                 if codeFromDB == code! {
+                    
+                    self.reference.childByAutoId().setValue(["name": self.userID, "geoLocation": "futureGeoLocation"])
+                    self.coordinator?.goToTimerView(asPlayer: self.isPlayer)
+                    
                     if let id = self.userID {
-                        self.reference.child("users").child("normalPlayers").setValue(id)
-                        self.coordinator?.goToTimerView(asPlayer: self.isPlayer)
+                       print(id)
                     }
                     
                 } else {

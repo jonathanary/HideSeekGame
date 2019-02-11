@@ -7,22 +7,27 @@
 //
 
 import Foundation
+import MapKit
+import FirebaseDatabase
 
+class Player: NSObject {
 
-//protocol Player {
-//    var id: String { get set }
-//    var name: String { get set }
-//    var status: Status { get set }
-//}
-
-struct Player {
-    var id: String
     var name: String
-    var status: Status?
-}
+    var geoLocation: String
+    var code: String?
+    let ref: DatabaseReference?
 
-enum Status {
-    case it
-    case normalPlayer
-    case unknown
+    init(name: String, location: String) {
+        self.name = name
+        self.geoLocation = location
+        self.ref = nil
+    }
+
+    init?(snapshot: DataSnapshot) {
+        guard let values = snapshot.value as? [String: Any] else { return nil }
+        self.name = values["name"] as! String
+        self.geoLocation = values["geoLocation"] as! String
+        self.ref = snapshot.ref
+    }
+
 }

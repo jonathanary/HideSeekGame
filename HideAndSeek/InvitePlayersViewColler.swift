@@ -13,8 +13,11 @@ import FirebaseDatabase
 class InvitePlayersViewColler: UIViewController, Storyboarded {
 
     weak var coordinator: MainCoordinator?
-    let reference = Database.database().reference()
+    let date = GameDate.shared() // this should be a singleton
+    var startReference = Database.database().reference()
+    //let reference = Database.database().reference().child(date)
     let userID = Auth.auth().currentUser?.uid
+    let userName = Auth.auth().currentUser?.displayName
     
     // MARK: FIREBASE TUTORIAL
     
@@ -43,8 +46,13 @@ class InvitePlayersViewColler: UIViewController, Storyboarded {
     var isPlayer = false
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        startReference = startReference.child(date)
         codeLabel.isHidden = true
         startGameLabel.isHidden = true
         // Do any additional setup after loading the view.
@@ -59,9 +67,9 @@ class InvitePlayersViewColler: UIViewController, Storyboarded {
         } else {
             codeTextField.isHidden = true
             let trimmedCode = code!.replacingOccurrences(of: " ", with: "").lowercased()
-            reference.child("users").child("thisIsATest").setValue(["username": "Somebody", "code": trimmedCode])
+            startReference.child("code").setValue(trimmedCode)
             //reference.child("someID/name").setValue(codeTextField.text)
-            reference.child("users").child("thisIsATest").child("code").observeSingleEvent(of: .value) { (snapshot) in
+            startReference.child("code").observeSingleEvent(of: .value) { (snapshot) in
                 let newCode = snapshot.value as! String
                 print(newCode)
                 self.codeLabel.text = newCode
