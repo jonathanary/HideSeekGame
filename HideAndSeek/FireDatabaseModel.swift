@@ -10,21 +10,28 @@ import Foundation
 import FirebaseDatabase
 import FirebaseAuth
 
+let date = GameDate.shared()
 
-struct FDatabase {
+class GameDataBase {
     private init () {}
-    let reference = Database.database().reference().child("fir-crashcourse-32ce7").child("users").child("thisIsATest").child("code")
+    static let reference = Database.database().reference().child(date)
+    static let userID = Auth.auth().currentUser?.uid
+    var code = ""
     
-    
-    
-    let userID = Auth.auth().currentUser?.uid
-        
-    func getCode() {
-        reference.observeSingleEvent(of: .childChanged) { (snapshot) in
-            if let codeValue = snapshot.value as? [String:Any] {
-                //print(codeValue["code"])
-            }
+    init?(codeSnapshot: DataSnapshot) {
+        GameDataBase.reference.child("code").observe(.value) { (snapshot) in
+            self.code = snapshot.value as! String
         }
     }
+}
+
+extension GameDataBase {
+    static func setCode(_ code: String) {
+        GameDataBase.reference.child("code").setValue(code)
+    }
+    static var newCode = ""
     
+//    static func getCode(_ completion: @escaping (String) -> Void) {
+//        //#warning ("How to get a closure value?")
+//    }
 }

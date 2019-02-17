@@ -17,10 +17,6 @@ class ViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
     }
     
     #warning("refactor")
@@ -30,7 +26,6 @@ class ViewController: UIViewController, Storyboarded {
         guard authUi != nil else { return }
         // set ourselves as the delegate
         authUi?.delegate = self
-        
         // get a reference to the auth UI view controller
         let authViewController = authUi!.authViewController()
         // show it
@@ -42,12 +37,10 @@ extension ViewController: FUIAuthDelegate {
     
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
         // Check for errors
-        guard error == nil else { return }
-        if let uid = authDataResult?.user.uid {
-            //let player = Player(id: uid, name: "Name")
-        }
-        
-        
+//        guard error == nil else { return }
+//        if let uid = authDataResult?.user.uid {
+//            let player = Player(id: uid, name: "Name")
+//        }
         coordinator?.goToLoginAndChoseView()
     }
     

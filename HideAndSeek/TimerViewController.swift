@@ -15,9 +15,8 @@ class TimerViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
     var isPlayer = true
     
-    let date = GameDate.shared()
     #warning("the reference should be the current date+code")
-    var reference = Database.database().reference()
+    var reference = GameDataBase.reference
 
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var secondsLabel: UILabel!
@@ -26,18 +25,26 @@ class TimerViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        reference = reference.child(date)
+
         if isPlayer == true {
             timerLabel.text = "Run and Hide!"
             startTimeLabel.isHidden = true
+            
         } else {
             
-            playersNameListLabel.text = "Players joined with your code:"
+            
+            reference.observe(.childAdded) { (snapshot) in
+                
+                if let player = Player(snapshot: snapshot) {
+                    let pName = player.name
+                    self.playersNameListLabel.text = "\(pName) joined with your code:"
+                }
+            }
         }
         
         var gameTimer: Timer!
         var runCount = 60
-        gameTimer  = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+        gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             runCount -= 1
             self.secondsLabel.text = ("\(runCount)")
             if runCount == 0 {

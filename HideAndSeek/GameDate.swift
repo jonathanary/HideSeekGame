@@ -11,8 +11,6 @@ import Foundation
 
 class GameDate {
     
-    
-    
     private static var formattedDate = { ()-> String in
         var date = Date()
         var dateFormatter = DateFormatter()
