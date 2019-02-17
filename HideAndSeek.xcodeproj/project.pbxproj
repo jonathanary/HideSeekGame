@@ -20,8 +20,8 @@
 		ABB1ED972208CCC200C5BE0E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1ED962208CCC200C5BE0E /* Coordinator.swift */; };
 		ABB1ED992208CD5A00C5BE0E /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1ED982208CD5A00C5BE0E /* Storyboarded.swift */; };
 		ABB1ED9B2208D1E900C5BE0E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1ED9A2208D1E900C5BE0E /* MainCoordinator.swift */; };
-		ABC304D422106CDF008F97FB /* HidersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC304D322106CDF008F97FB /* HidersViewController.swift */; };
-		ABC304F722117AE9008F97FB /* SeekersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC304F622117AE9008F97FB /* SeekersViewController.swift */; };
+		ABC304D422106CDF008F97FB /* SeekersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC304D322106CDF008F97FB /* SeekersViewController.swift */; };
+		ABC304F722117AE9008F97FB /* HidersViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC304F622117AE9008F97FB /* HidersViewControlller.swift */; };
 		ABC304F92211854D008F97FB /* GameDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC304F82211854D008F97FB /* GameDate.swift */; };
 		ABC304FB22132B1E008F97FB /* CodeTrimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC304FA22132B1E008F97FB /* CodeTrimmer.swift */; };
 		ABD000B122086A360022AA41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD000B022086A360022AA41 /* AppDelegate.swift */; };
@@ -30,6 +30,8 @@
 		ABD000B822086A390022AA41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD000B722086A390022AA41 /* Assets.xcassets */; };
 		ABD000BB22086A390022AA41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD000B922086A390022AA41 /* LaunchScreen.storyboard */; };
 		ABD000C322086D1B0022AA41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABD000C222086D1B0022AA41 /* GoogleService-Info.plist */; };
+		ABF9A30C2219C8E700045592 /* LocationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9A30B2219C8E700045592 /* LocationStorage.swift */; };
+		ABF9A30E2219C92400045592 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9A30D2219C92400045592 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,8 +49,8 @@
 		ABB1ED962208CCC200C5BE0E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		ABB1ED982208CD5A00C5BE0E /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		ABB1ED9A2208D1E900C5BE0E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		ABC304D322106CDF008F97FB /* HidersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HidersViewController.swift; sourceTree = "<group>"; };
-		ABC304F622117AE9008F97FB /* SeekersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeekersViewController.swift; sourceTree = "<group>"; };
+		ABC304D322106CDF008F97FB /* SeekersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekersViewController.swift; sourceTree = "<group>"; };
+		ABC304F622117AE9008F97FB /* HidersViewControlller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HidersViewControlller.swift; sourceTree = "<group>"; };
 		ABC304F82211854D008F97FB /* GameDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDate.swift; sourceTree = "<group>"; };
 		ABC304FA22132B1E008F97FB /* CodeTrimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTrimmer.swift; sourceTree = "<group>"; };
 		ABD000AD22086A360022AA41 /* HideAndSeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HideAndSeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +61,8 @@
 		ABD000BA22086A390022AA41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABD000BC22086A390022AA41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABD000C222086D1B0022AA41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		ABF9A30B2219C8E700045592 /* LocationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStorage.swift; sourceTree = "<group>"; };
+		ABF9A30D2219C92400045592 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F107569CFA65F4A3B998F6C6 /* Pods-HideAndSeek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HideAndSeek.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HideAndSeek/Pods-HideAndSeek.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,9 +115,11 @@
 				AB3E57EE220B2C8B002C3C4A /* InvitePlayersViewColler.swift */,
 				AB3E57F0220B33E8002C3C4A /* TypeCodeViewController.swift */,
 				AB3E57F8220D74B2002C3C4A /* TimerViewController.swift */,
-				ABC304F622117AE9008F97FB /* SeekersViewController.swift */,
-				ABC304D322106CDF008F97FB /* HidersViewController.swift */,
+				ABC304D322106CDF008F97FB /* SeekersViewController.swift */,
+				ABC304F622117AE9008F97FB /* HidersViewControlller.swift */,
 				ABD000B422086A360022AA41 /* Main.storyboard */,
+				ABF9A30D2219C92400045592 /* Location.swift */,
+				ABF9A30B2219C8E700045592 /* LocationStorage.swift */,
 				ABD000B722086A390022AA41 /* Assets.xcassets */,
 				ABD000B922086A390022AA41 /* LaunchScreen.storyboard */,
 				ABD000C222086D1B0022AA41 /* GoogleService-Info.plist */,
@@ -279,9 +285,10 @@
 			files = (
 				ABC304F92211854D008F97FB /* GameDate.swift in Sources */,
 				AB3E57EB2208E4CE002C3C4A /* ChooseViewController.swift in Sources */,
+				ABF9A30E2219C92400045592 /* Location.swift in Sources */,
 				ABD000B322086A360022AA41 /* ViewController.swift in Sources */,
 				AB3E57F1220B33E8002C3C4A /* TypeCodeViewController.swift in Sources */,
-				ABC304D422106CDF008F97FB /* HidersViewController.swift in Sources */,
+				ABC304D422106CDF008F97FB /* SeekersViewController.swift in Sources */,
 				ABD000B122086A360022AA41 /* AppDelegate.swift in Sources */,
 				AB3E57F7220CC51A002C3C4A /* Player.swift in Sources */,
 				ABB1ED972208CCC200C5BE0E /* Coordinator.swift in Sources */,
@@ -290,9 +297,10 @@
 				ABB1ED9B2208D1E900C5BE0E /* MainCoordinator.swift in Sources */,
 				AB3E57F3220B39D4002C3C4A /* Errors.swift in Sources */,
 				AB3E57FB220D7899002C3C4A /* Timer.swift in Sources */,
+				ABF9A30C2219C8E700045592 /* LocationStorage.swift in Sources */,
 				AB3E57EF220B2C8B002C3C4A /* InvitePlayersViewColler.swift in Sources */,
 				AB3E57F9220D74B2002C3C4A /* TimerViewController.swift in Sources */,
-				ABC304F722117AE9008F97FB /* SeekersViewController.swift in Sources */,
+				ABC304F722117AE9008F97FB /* HidersViewControlller.swift in Sources */,
 				AB3E57ED220A2B64002C3C4A /* FireBaseAuthDelegate.swift in Sources */,
 				ABB1ED992208CD5A00C5BE0E /* Storyboarded.swift in Sources */,
 			);

@@ -15,14 +15,14 @@ class TypeCodeViewController: UIViewController, Storyboarded {
     var reference = GameDataBase.reference
     var isPlayer = true
     let userID = GameDataBase.userID
-
+    
     @IBOutlet weak var codeTextField: UITextField!
     
     weak var coordinator: MainCoordinator?
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     @IBAction func joinGameTapped(_ sender: Any) {
         
         let code = codeTextField.text
@@ -31,15 +31,16 @@ class TypeCodeViewController: UIViewController, Storyboarded {
         } else {
             
             reference.child("code").observeSingleEvent(of: .value) { (snapshot) in
-                if let codeFromDB = GameDataBase(codeSnapshot: snapshot)?.code {
-                    print(codeFromDB)
+                
+                let codeFromDB = snapshot.value as! String
+                print(codeFromDB)
+                if codeFromDB == code! {
                     
-                    if codeFromDB == code! {
-                        self.reference.childByAutoId().setValue(["name": self.userID, "geoLocation": "futureGeoLocation"])
-                        self.coordinator?.goToTimerView(asPlayer: self.isPlayer)
-                    } else {
-                        // handle error
-                    }
+                    self.reference.childByAutoId().setValue(["name": self.userID, "geoLocation": "futureGeoLocation"])
+                    self.coordinator?.goToTimerView(asPlayer: self.isPlayer)
+                } else {
+                    // handle error
+                    
                 }
                 
             }

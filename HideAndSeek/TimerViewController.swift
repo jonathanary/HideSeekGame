@@ -31,7 +31,7 @@ class TimerViewController: UIViewController, Storyboarded {
         } else {
             
             
-            reference.observe(.childAdded) { (snapshot) in
+            reference.observe(.value) { (snapshot) in
                 
                 if let player = Player(snapshot: snapshot) {
                     let pName = player.name

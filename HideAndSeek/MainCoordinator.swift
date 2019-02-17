@@ -48,13 +48,13 @@ class MainCoordinator: Coordinator {
     }
     
     func goToSeekersView() {
-        let vc = SeekersViewController.instantiate()
+        let vc = HidersViewControlller.instantiate()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     
     func goToHidersView() {
-        let vc = HidersViewController.instantiate()
+        let vc = HidersViewControlller.instantiate()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

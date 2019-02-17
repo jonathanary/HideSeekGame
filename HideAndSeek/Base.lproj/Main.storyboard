@@ -312,10 +312,10 @@
             </objects>
             <point key="canvasLocation" x="2626.0869565217395" y="125.89285714285714"/>
         </scene>
-        <!--Hiders View Controller-->
+        <!--Seekers View Controller-->
         <scene sceneID="Cbu-pj-do5">
             <objects>
-                <viewController storyboardIdentifier="HIdersViewController" id="h6W-Hx-xp3" customClass="HidersViewController" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SeekersViewController" id="h6W-Hx-xp3" customClass="SeekersViewController" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OyB-uW-55f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,10 +336,10 @@
             </objects>
             <point key="canvasLocation" x="3361" y="453"/>
         </scene>
-        <!--Seekers View Controller-->
+        <!--Hiders View Controlller-->
         <scene sceneID="HO0-BG-I7d">
             <objects>
-                <viewController storyboardIdentifier="SeekersViewController" id="2cG-Ui-iUP" customClass="SeekersViewController" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HidersViewControlller" id="2cG-Ui-iUP" customClass="HidersViewControlller" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ntH-od-Tgy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -351,29 +351,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7le-aB-Mxg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7le-aB-Mxg" firstAttribute="bottom" secondItem="Rd7-0r-rvT" secondAttribute="bottom" id="ch8-KE-Eid"/>
+                            <constraint firstItem="7le-aB-Mxg" firstAttribute="top" secondItem="Rd7-0r-rvT" secondAttribute="top" id="dKs-47-qLB"/>
+                            <constraint firstItem="7le-aB-Mxg" firstAttribute="leading" secondItem="Rd7-0r-rvT" secondAttribute="leading" id="drZ-ZY-TzU"/>
+                            <constraint firstItem="7le-aB-Mxg" firstAttribute="trailing" secondItem="Rd7-0r-rvT" secondAttribute="trailing" id="zfC-fi-BCA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Rd7-0r-rvT"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="7le-aB-Mxg" id="nug-Ur-Ym5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVU-aV-pqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3362" y="-258"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="5fp-eo-hfH">
-            <objects>
-                <viewController id="sSd-jG-RRu" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aDU-hG-iUN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="VKv-0O-OO6"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZYx-da-ryK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4171" y="-61"/>
+            <point key="canvasLocation" x="3360.8695652173915" y="-258.48214285714283"/>
         </scene>
     </scenes>
 </document>
