@@ -14,8 +14,6 @@ class TimerViewController: UIViewController, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     var isPlayer = true
-    
-    #warning("the reference should be the current date+code")
     var reference = GameDataBase.reference
 
     @IBOutlet weak var timerLabel: UILabel!
