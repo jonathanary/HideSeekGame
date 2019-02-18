@@ -30,12 +30,18 @@ class TimerViewController: UIViewController, Storyboarded {
             
         } else {
             
-            
-            reference.observe(.value) { (snapshot) in
+            var names = [String]()
+            self.playersNameListLabel.text = ""
+            reference.observe(.childAdded) { (snapshot) in
                 
                 if let player = Player(snapshot: snapshot) {
                     let pName = player.name
-                    self.playersNameListLabel.text = "\(pName) joined with your code:"
+                    print(pName)
+                    names.append(pName)
+                    for name in names {
+                        self.playersNameListLabel.text?.append(contentsOf: name)
+                    }
+                    self.playersNameListLabel.text?.append(" joined the game!")
                 }
             }
         }

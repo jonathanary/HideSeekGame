@@ -18,11 +18,11 @@ class GameDataBase {
     static let userID = Auth.auth().currentUser?.uid
     var code = ""
     
-//    init?(codeSnapshot: DataSnapshot) {
-//        GameDataBase.reference.child("code").observe(.value) { (snapshot) in
-//            self.code = snapshot.value as! String
-//        }
-//    }
+    init?(codeSnapshot: DataSnapshot) {
+        GameDataBase.reference.child("code").observe(.value) { (snapshot) in
+            self.code = snapshot.value as! String
+        }
+    }
 }
 
 extension GameDataBase {
