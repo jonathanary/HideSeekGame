@@ -13,13 +13,16 @@ import FirebaseDatabase
 class Player: NSObject {
 
     var name: String
-    var geoLocation: String
+    var latitude: String
+    var longitude: String
+    //var geoLocation: String
     var code: String?
     let ref: DatabaseReference?
 
-    init(name: String, location: String) {
+    init(name: String, latitude: String, longitude: String) {
         self.name = name
-        self.geoLocation = location
+        self.latitude = latitude
+        self.longitude = longitude
         self.ref = nil
     }
 
@@ -27,7 +30,8 @@ class Player: NSObject {
         guard let values = snapshot.value as? [String: Any] else { return nil }
         
         self.name = values["name"] as! String //Do it differently when there are no names
-        self.geoLocation = values["geoLocation"] as! String
+        self.latitude = values["geoLatitude"] as! String
+        self.longitude = values["geoLongitude"] as! String
         self.ref = snapshot.ref
     }
 

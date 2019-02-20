@@ -40,15 +40,18 @@ class SeekersViewControlller: UIViewController, Storyboarded {
         reference.observe(.childAdded) { (snapshot) in
             
             if let player = Player(snapshot: snapshot) {
-                print(player.geoLocation)
+                print(player.latitude)
             }
         }
         
     }
     
     @objc func updateLocation() {
-        if let location = locationManager.location?.coordinate.latitude {
-            self.userReference.updateChildValues(["geoLocation": location])
+        if let latitude = locationManager.location?.coordinate.latitude {
+            self.userReference.updateChildValues(["geoLatitude": latitude])
+        }
+        if let longitude = locationManager.location?.coordinate.longitude {
+            self.userReference.updateChildValues(["geoLongitude": longitude])
         }
     }
     

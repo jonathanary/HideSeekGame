@@ -15,7 +15,7 @@ class TypeCodeViewController: UIViewController, Storyboarded {
     var reference = GameDataBase.reference
     var userReference = GameDataBase.userRefByAutoID
     var isPlayer = true
-    let userID = GameDataBase.userID
+    let username = GameDataBase.userName
     
     @IBOutlet weak var codeTextField: UITextField!
     
@@ -37,7 +37,7 @@ class TypeCodeViewController: UIViewController, Storyboarded {
                 print(codeFromDB)
                 if codeFromDB == code! {
                     
-                    self.userReference.setValue(["name": self.userID, "geoLocation": "futureGeoLocation"])
+                    self.userReference.setValue(["name": self.username!, "geoLatitude": "futureGeoLat", "geoLongitude": "futureGeoLong"])
                     self.coordinator?.goToTimerView(asPlayer: self.isPlayer)
                 } else {
                     // handle error
