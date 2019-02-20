@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SeekersViewController: UIViewController, Storyboarded {
+class HidersViewController: UIViewController, Storyboarded {
 
     weak var coordinator: MainCoordinator?
     

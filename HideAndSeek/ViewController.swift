@@ -37,7 +37,7 @@ extension ViewController: FUIAuthDelegate {
     
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
         // Check for errors
-//        guard error == nil else { return }
+        guard error == nil else { return }
 //        if let uid = authDataResult?.user.uid {
 //            let player = Player(id: uid, name: "Name")
 //        }

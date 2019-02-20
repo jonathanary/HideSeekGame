@@ -13,6 +13,7 @@ import FirebaseAuth
 class TypeCodeViewController: UIViewController, Storyboarded {
     
     var reference = GameDataBase.reference
+    var userReference = GameDataBase.userRefByAutoID
     var isPlayer = true
     let userID = GameDataBase.userID
     
@@ -36,7 +37,7 @@ class TypeCodeViewController: UIViewController, Storyboarded {
                 print(codeFromDB)
                 if codeFromDB == code! {
                     
-                    self.reference.childByAutoId().setValue(["name": self.userID, "geoLocation": "futureGeoLocation"])
+                    self.userReference.setValue(["name": self.userID, "geoLocation": "futureGeoLocation"])
                     self.coordinator?.goToTimerView(asPlayer: self.isPlayer)
                 } else {
                     // handle error

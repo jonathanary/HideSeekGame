@@ -25,9 +25,33 @@ class Player: NSObject {
 
     init?(snapshot: DataSnapshot) {
         guard let values = snapshot.value as? [String: Any] else { return nil }
+        
         self.name = values["name"] as! String
         self.geoLocation = values["geoLocation"] as! String
         self.ref = snapshot.ref
     }
 
 }
+
+// rewritten
+
+
+
+//struct PlayersData: Sequence {
+//    let players: [PlayerByAutoID]
+//    //let code: String?
+//
+//    init?(snapshot: DataSnapshot) {
+//        guard let players = snapshot.value as? [PlayerByAutoID] else { return nil }
+//        self.players = players
+//        for player in players {
+//
+//        }
+//
+//    }
+//}
+//
+//struct PlayerByAutoID: Hashable {
+//    let name: String
+//    let geoLocation: String
+//}

@@ -15,6 +15,8 @@ let date = GameDate.shared()
 class GameDataBase {
     private init () {}
     static let reference = Database.database().reference().child(date)
+    
+    static let timerReference = Database.database().reference().child("\(date)TIMER")
     static let userID = Auth.auth().currentUser?.uid
     var code = ""
     
@@ -30,7 +32,7 @@ extension GameDataBase {
         GameDataBase.reference.child("code").setValue(code)
     }
     static var newCode = ""
-    
+    static var userRefByAutoID = GameDataBase.reference.childByAutoId()
 //    static func getCode(_ completion: @escaping (String) -> Void) {
 //        //#warning ("How to get a closure value?")
 //    }

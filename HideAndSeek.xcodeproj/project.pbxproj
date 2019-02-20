@@ -20,8 +20,8 @@
 		ABB1ED972208CCC200C5BE0E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1ED962208CCC200C5BE0E /* Coordinator.swift */; };
 		ABB1ED992208CD5A00C5BE0E /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1ED982208CD5A00C5BE0E /* Storyboarded.swift */; };
 		ABB1ED9B2208D1E900C5BE0E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1ED9A2208D1E900C5BE0E /* MainCoordinator.swift */; };
-		ABC304D422106CDF008F97FB /* SeekersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC304D322106CDF008F97FB /* SeekersViewController.swift */; };
-		ABC304F722117AE9008F97FB /* HidersViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC304F622117AE9008F97FB /* HidersViewControlller.swift */; };
+		ABC304D422106CDF008F97FB /* HidersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC304D322106CDF008F97FB /* HidersViewController.swift */; };
+		ABC304F722117AE9008F97FB /* SeekersViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC304F622117AE9008F97FB /* SeekersViewControlller.swift */; };
 		ABC304F92211854D008F97FB /* GameDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC304F82211854D008F97FB /* GameDate.swift */; };
 		ABC304FB22132B1E008F97FB /* CodeTrimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC304FA22132B1E008F97FB /* CodeTrimmer.swift */; };
 		ABD000B122086A360022AA41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD000B022086A360022AA41 /* AppDelegate.swift */; };
@@ -49,8 +49,8 @@
 		ABB1ED962208CCC200C5BE0E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		ABB1ED982208CD5A00C5BE0E /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		ABB1ED9A2208D1E900C5BE0E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		ABC304D322106CDF008F97FB /* SeekersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekersViewController.swift; sourceTree = "<group>"; };
-		ABC304F622117AE9008F97FB /* HidersViewControlller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HidersViewControlller.swift; sourceTree = "<group>"; };
+		ABC304D322106CDF008F97FB /* HidersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HidersViewController.swift; sourceTree = "<group>"; };
+		ABC304F622117AE9008F97FB /* SeekersViewControlller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeekersViewControlller.swift; sourceTree = "<group>"; };
 		ABC304F82211854D008F97FB /* GameDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDate.swift; sourceTree = "<group>"; };
 		ABC304FA22132B1E008F97FB /* CodeTrimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTrimmer.swift; sourceTree = "<group>"; };
 		ABD000AD22086A360022AA41 /* HideAndSeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HideAndSeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,8 +115,8 @@
 				AB3E57EE220B2C8B002C3C4A /* InvitePlayersViewColler.swift */,
 				AB3E57F0220B33E8002C3C4A /* TypeCodeViewController.swift */,
 				AB3E57F8220D74B2002C3C4A /* TimerViewController.swift */,
-				ABC304D322106CDF008F97FB /* SeekersViewController.swift */,
-				ABC304F622117AE9008F97FB /* HidersViewControlller.swift */,
+				ABC304D322106CDF008F97FB /* HidersViewController.swift */,
+				ABC304F622117AE9008F97FB /* SeekersViewControlller.swift */,
 				ABD000B422086A360022AA41 /* Main.storyboard */,
 				ABF9A30D2219C92400045592 /* Location.swift */,
 				ABF9A30B2219C8E700045592 /* LocationStorage.swift */,
@@ -180,6 +180,11 @@
 				TargetAttributes = {
 					ABD000AC22086A360022AA41 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -288,7 +293,7 @@
 				ABF9A30E2219C92400045592 /* Location.swift in Sources */,
 				ABD000B322086A360022AA41 /* ViewController.swift in Sources */,
 				AB3E57F1220B33E8002C3C4A /* TypeCodeViewController.swift in Sources */,
-				ABC304D422106CDF008F97FB /* SeekersViewController.swift in Sources */,
+				ABC304D422106CDF008F97FB /* HidersViewController.swift in Sources */,
 				ABD000B122086A360022AA41 /* AppDelegate.swift in Sources */,
 				AB3E57F7220CC51A002C3C4A /* Player.swift in Sources */,
 				ABB1ED972208CCC200C5BE0E /* Coordinator.swift in Sources */,
@@ -300,7 +305,7 @@
 				ABF9A30C2219C8E700045592 /* LocationStorage.swift in Sources */,
 				AB3E57EF220B2C8B002C3C4A /* InvitePlayersViewColler.swift in Sources */,
 				AB3E57F9220D74B2002C3C4A /* TimerViewController.swift in Sources */,
-				ABC304F722117AE9008F97FB /* HidersViewControlller.swift in Sources */,
+				ABC304F722117AE9008F97FB /* SeekersViewControlller.swift in Sources */,
 				AB3E57ED220A2B64002C3C4A /* FireBaseAuthDelegate.swift in Sources */,
 				ABB1ED992208CD5A00C5BE0E /* Storyboarded.swift in Sources */,
 			);
