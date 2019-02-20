@@ -34,7 +34,7 @@ class TimerViewController: UIViewController, Storyboarded {
                     print(secondsLeftToHide)
                     self.secondsLabel.text = String(secondsLeftToHide)
                     if secondsLeftToHide == 0 {
-                        self.coordinator?.goToHidersView()
+                        self.coordinator?.goToSeekersView(asPlayer: self.isPlayer)
                     }
                 }
             }
@@ -77,7 +77,7 @@ class TimerViewController: UIViewController, Storyboarded {
                 if self.isPlayer == true  && self.view == self {
                     self.coordinator?.goToHidersView()
                 } else {
-                    self.coordinator?.goToSeekersView()
+                    self.coordinator?.goToSeekersView(asPlayer: self.isPlayer)
                     self.timerFireBase.setValue(60)
                 }
                 

@@ -16,7 +16,7 @@ class GameDataBase {
     private init () {}
     static let reference = Database.database().reference().child(date)
     
-    static let timerReference = Database.database().reference().child("\(date)TIMER")
+    //static let timerReference = Database.database().reference().child("\(date)TIMER")
     static let userID = Auth.auth().currentUser?.uid
     var code = ""
     
@@ -31,6 +31,7 @@ extension GameDataBase {
     static func setCode(_ code: String) {
         GameDataBase.reference.child("code").setValue(code)
     }
+    static var timerReference = GameDataBase.reference.child("\(date)Timer")
     static var newCode = ""
     static var userRefByAutoID = GameDataBase.reference.childByAutoId()
 //    static func getCode(_ completion: @escaping (String) -> Void) {

@@ -15,22 +15,28 @@ class SeekersViewControlller: UIViewController, Storyboarded {
     var lastTimeStamp = Date()
     
     let locationManager = CLLocationManager()
+    var isPlayer = true
     
     weak var coordinator: MainCoordinator?
     var reference = GameDataBase.reference
+    let userReference = GameDataBase.userRefByAutoID
     var playersArray = [Player]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
        //mapView.delegate = self
-        checkLocationServices()
-        if let location = locationManager.location?.coordinate {
-            print(location)
+        if isPlayer {
+            checkLocationServices()
         }
+        
+//        if let location = locationManager.location?.coordinate {
+//            print(location)
+//        }
         
         //self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil), animated: true)
         
         mapView.userTrackingMode = .follow
+        mapView.isHidden = true
         reference.observe(.childAdded) { (snapshot) in
             
             if let player = Player(snapshot: snapshot) {
@@ -41,8 +47,8 @@ class SeekersViewControlller: UIViewController, Storyboarded {
     }
     
     @objc func updateLocation() {
-        if let location = locationManager.location?.coordinate {
-            
+        if let location = locationManager.location?.coordinate.latitude {
+            self.userReference.setValue(["geoLocation": location])
         }
     }
     
@@ -53,7 +59,7 @@ class SeekersViewControlller: UIViewController, Storyboarded {
         //locationManager.requestAlwaysAuthorization()
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.pausesLocationUpdatesAutomatically = false //??
-        var timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateLocation), userInfo: nil, repeats: true)
+        _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateLocation), userInfo: nil, repeats: true)
     }
     
     func checkLocationServices() {

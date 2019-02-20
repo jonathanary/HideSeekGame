@@ -47,9 +47,10 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func goToSeekersView() {
+    func goToSeekersView(asPlayer: Bool) {
         let vc = SeekersViewControlller.instantiate()
         vc.coordinator = self
+        vc.isPlayer = asPlayer
         navigationController.pushViewController(vc, animated: true)
     }
     
