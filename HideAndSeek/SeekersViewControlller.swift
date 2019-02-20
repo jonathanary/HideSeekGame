@@ -48,7 +48,7 @@ class SeekersViewControlller: UIViewController, Storyboarded {
     
     @objc func updateLocation() {
         if let location = locationManager.location?.coordinate.latitude {
-            self.userReference.setValue(["geoLocation": location])
+            self.userReference.updateChildValues(["geoLocation": location])
         }
     }
     
