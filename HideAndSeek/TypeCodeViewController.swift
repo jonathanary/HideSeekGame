@@ -22,7 +22,7 @@ class TypeCodeViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
+    }  
     
     @IBAction func joinGameTapped(_ sender: Any) {
         

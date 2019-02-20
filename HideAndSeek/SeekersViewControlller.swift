@@ -12,6 +12,7 @@ import MapKit
 class SeekersViewControlller: UIViewController, Storyboarded {
 
     @IBOutlet weak var mapView: MKMapView!
+    var lastTimeStamp = Date()
     
     let locationManager = CLLocationManager()
     
@@ -39,13 +40,20 @@ class SeekersViewControlller: UIViewController, Storyboarded {
         
     }
     
+    @objc func updateLocation() {
+        if let location = locationManager.location?.coordinate {
+            
+        }
+    }
+    
     func setupLocationManager() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         locationManager.distanceFilter = 0.4 //In meters
-        locationManager.requestAlwaysAuthorization()
+        //locationManager.requestAlwaysAuthorization()
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.pausesLocationUpdatesAutomatically = false //??
+        var timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateLocation), userInfo: nil, repeats: true)
     }
     
     func checkLocationServices() {
