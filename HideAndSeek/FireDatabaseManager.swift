@@ -18,6 +18,7 @@ class GameDataBase {
     
     //static let timerReference = Database.database().reference().child("\(date)TIMER")
     static let userID = Auth.auth().currentUser?.uid
+    static let userName = Auth.auth().currentUser?.displayName
     var code = ""
     
     init?(codeSnapshot: DataSnapshot) {
@@ -31,9 +32,9 @@ extension GameDataBase {
     static func setCode(_ code: String) {
         GameDataBase.reference.child("code").setValue(code)
     }
-    static var timerReference = GameDataBase.reference.child("\(date)Timer")
+    static var timerReference = GameDataBase.reference.child("Timer")
     static var newCode = ""
-    static var userRefByAutoID = GameDataBase.reference.childByAutoId()
+    static var userRefByAutoID = GameDataBase.reference.child(GameDataBase.userName!)
 //    static func getCode(_ completion: @escaping (String) -> Void) {
 //        //#warning ("How to get a closure value?")
 //    }

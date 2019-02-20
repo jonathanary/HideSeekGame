@@ -26,7 +26,7 @@ class Player: NSObject {
     init?(snapshot: DataSnapshot) {
         guard let values = snapshot.value as? [String: Any] else { return nil }
         
-        self.name = values["name"] as! String
+        self.name = values["name"] as! String //Do it differently when there are no names
         self.geoLocation = values["geoLocation"] as! String
         self.ref = snapshot.ref
     }

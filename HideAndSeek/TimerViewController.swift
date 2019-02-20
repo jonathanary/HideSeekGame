@@ -74,8 +74,8 @@ class TimerViewController: UIViewController, Storyboarded {
                 gameTimer.invalidate()
                 
                 // coordinator
-                if self.isPlayer == true  && self.view == self {
-                    self.coordinator?.goToHidersView()
+                if self.isPlayer == true {
+                    self.coordinator?.goToSeekersView(asPlayer: self.isPlayer)
                 } else {
                     self.coordinator?.goToSeekersView(asPlayer: self.isPlayer)
                     self.timerFireBase.setValue(60)
