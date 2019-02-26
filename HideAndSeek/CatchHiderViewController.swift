@@ -11,12 +11,16 @@ import CoreLocation
 
 class CatchHiderViewController: UIViewController, Storyboarded, CLLocationManagerDelegate {
 
+    
     var coordinator: MainCoordinator?
+    let backgroundColor = BackgoundColorProvider()
     var hider = ""
+    
     
     var locationManager: CLLocationManager!
     
     @IBOutlet var hidersColorOutlet: UIImageView!
+    @IBOutlet var messageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +30,7 @@ class CatchHiderViewController: UIViewController, Storyboarded, CLLocationManage
         locationManager.requestWhenInUseAuthorization()
         startScanningForBeaconRegion(beaconRegion: getBeaconRegion())
         
-        hidersColorOutlet.backgroundColor = .red
+        hidersColorOutlet.backgroundColor = backgroundColor.randomColor()
         hidersColorOutlet.alpha = 0
         
     }
@@ -86,15 +90,23 @@ class CatchHiderViewController: UIViewController, Storyboarded, CLLocationManage
                 if beacon.proximity == CLProximity.unknown {
                     print("Unknown Proximity")
                     self.hidersColorOutlet.alpha = 0
+                    self.messageLabel.textColor = .darkGray
+                    self.messageLabel.text = "\(hider) is far, or closed the app"
                 } else if beacon.proximity == CLProximity.immediate {
                     print("Immediate Proximity")
                     self.hidersColorOutlet.alpha = 1
+                    self.messageLabel.textColor = .white
+                    self.messageLabel.text = "\(hider) is here!"
                 } else if beacon.proximity == CLProximity.near {
                     print("Near Proximity")
                     self.hidersColorOutlet.alpha = 0.6
+                    self.messageLabel.textColor = .white
+                    self.messageLabel.text = "\(hider) is close!"
                 } else if beacon.proximity == CLProximity.far {
                     print("Far Proximity")
                     self.hidersColorOutlet.alpha = 0.3
+                    self.messageLabel.textColor = .gray
+                    self.messageLabel.text = "\(hider) is not so far"
                 }
             }
             

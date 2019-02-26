@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		82E5412A902FE4179EFB8C93 /* Pods_HideAndSeek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F9DCB09D7D5C91F43AE091 /* Pods_HideAndSeek.framework */; };
 		AB059A81222535320054390E /* CatchHiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB059A80222535320054390E /* CatchHiderViewController.swift */; };
+		AB059A8322258FCA0054390E /* BackgroundColorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB059A8222258FCA0054390E /* BackgroundColorProvider.swift */; };
 		AB3E57EB2208E4CE002C3C4A /* ChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57EA2208E4CE002C3C4A /* ChooseViewController.swift */; };
 		AB3E57ED220A2B64002C3C4A /* FireBaseAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57EC220A2B64002C3C4A /* FireBaseAuthDelegate.swift */; };
 		AB3E57EF220B2C8B002C3C4A /* InvitePlayersViewColler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57EE220B2C8B002C3C4A /* InvitePlayersViewColler.swift */; };
@@ -40,6 +41,7 @@
 		02F9DCB09D7D5C91F43AE091 /* Pods_HideAndSeek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HideAndSeek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CECEC06EB2AEAD6AE578714 /* Pods-HideAndSeek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HideAndSeek.release.xcconfig"; path = "Pods/Target Support Files/Pods-HideAndSeek/Pods-HideAndSeek.release.xcconfig"; sourceTree = "<group>"; };
 		AB059A80222535320054390E /* CatchHiderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchHiderViewController.swift; sourceTree = "<group>"; };
+		AB059A8222258FCA0054390E /* BackgroundColorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorProvider.swift; sourceTree = "<group>"; };
 		AB3E57EA2208E4CE002C3C4A /* ChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseViewController.swift; sourceTree = "<group>"; };
 		AB3E57EC220A2B64002C3C4A /* FireBaseAuthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseAuthDelegate.swift; sourceTree = "<group>"; };
 		AB3E57EE220B2C8B002C3C4A /* InvitePlayersViewColler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitePlayersViewColler.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				ABD000B022086A360022AA41 /* AppDelegate.swift */,
+				AB059A8222258FCA0054390E /* BackgroundColorProvider.swift */,
 				AB3E57F4220BF153002C3C4A /* FireDatabaseManager.swift */,
 				AB3E57EC220A2B64002C3C4A /* FireBaseAuthDelegate.swift */,
 				AB3E57F6220CC51A002C3C4A /* Player.swift */,
@@ -302,6 +305,7 @@
 				AB059A81222535320054390E /* CatchHiderViewController.swift in Sources */,
 				ABC304D422106CDF008F97FB /* HidersViewController.swift in Sources */,
 				ABD000B122086A360022AA41 /* AppDelegate.swift in Sources */,
+				AB059A8322258FCA0054390E /* BackgroundColorProvider.swift in Sources */,
 				AB3E57F7220CC51A002C3C4A /* Player.swift in Sources */,
 				ABB1ED972208CCC200C5BE0E /* Coordinator.swift in Sources */,
 				AB3E57F5220BF153002C3C4A /* FireDatabaseManager.swift in Sources */,

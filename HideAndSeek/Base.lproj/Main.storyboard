@@ -359,11 +359,19 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5tc-27-ntz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrb-JE-oOr">
+                                <rect key="frame" x="150" y="314.5" width="75.5" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5tc-27-ntz" firstAttribute="trailing" secondItem="5dk-Yp-JEv" secondAttribute="trailing" id="2wR-04-WAz"/>
+                            <constraint firstItem="mrb-JE-oOr" firstAttribute="centerX" secondItem="7ka-8D-AbP" secondAttribute="centerX" id="BT8-2z-ZEh"/>
                             <constraint firstItem="5tc-27-ntz" firstAttribute="top" secondItem="7ka-8D-AbP" secondAttribute="top" id="Gb9-fT-oXq"/>
+                            <constraint firstItem="mrb-JE-oOr" firstAttribute="centerY" secondItem="7ka-8D-AbP" secondAttribute="centerY" id="JHo-cv-GhW"/>
                             <constraint firstItem="5tc-27-ntz" firstAttribute="bottom" secondItem="5dk-Yp-JEv" secondAttribute="bottom" id="Vs7-Yd-HN3"/>
                             <constraint firstItem="5tc-27-ntz" firstAttribute="leading" secondItem="5dk-Yp-JEv" secondAttribute="leading" id="zKb-rD-9zu"/>
                         </constraints>
@@ -371,6 +379,7 @@
                     </view>
                     <connections>
                         <outlet property="hidersColorOutlet" destination="5tc-27-ntz" id="Fi9-8D-pfI"/>
+                        <outlet property="messageLabel" destination="mrb-JE-oOr" id="hXu-Ea-mHQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfP-L7-p9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
