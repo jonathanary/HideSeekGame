@@ -40,23 +40,30 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func goToTimerView(asPlayer: Bool) {
+    func goToTimerView(asHider: Bool) {
         let vc = TimerViewController.instantiate()
-        vc.isPlayer = asPlayer
+        vc.isHider = asHider
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func goToSeekersView(asPlayer: Bool) {
-        let vc = SeekersViewControlller.instantiate()
+    func goToSeekersView(asHider: Bool) {
+        let vc = SeekersViewController.instantiate()
         vc.coordinator = self
-        vc.isPlayer = asPlayer
+        vc.isHider = asHider
         navigationController.pushViewController(vc, animated: true)
     }
     
     func goToHidersView() {
         let vc = HidersViewController.instantiate()
         vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func goToCatchView(with hider: String) {
+        let vc = CatchHiderViewController.instantiate()
+        vc.coordinator = self
+        vc.hider = hider
         navigationController.pushViewController(vc, animated: true)
     }
     

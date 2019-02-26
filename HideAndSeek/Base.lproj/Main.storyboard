@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="c6h-og-Kxi">
-                                <rect key="frame" x="151.5" y="403" width="111" height="90.5"/>
+                                <rect key="frame" x="132" y="288.5" width="111" height="90.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hide and Seek" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1J1-aP-hrz">
                                         <rect key="frame" x="0.0" y="0.0" width="111" height="20.5"/>
@@ -54,11 +54,11 @@
             <objects>
                 <viewController storyboardIdentifier="ChooseViewController" id="Xzi-cp-B3I" customClass="ChooseViewController" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="db0-xm-ku6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="sxd-D3-5WI">
-                                <rect key="frame" x="82" y="398.5" width="250" height="99.5"/>
+                                <rect key="frame" x="62.5" y="284" width="250" height="99.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Chose your character!" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esd-lb-ENM">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="20.5"/>
@@ -105,11 +105,11 @@
             <objects>
                 <viewController storyboardIdentifier="InvitePlayersViewColler" id="juE-uR-F7w" customClass="InvitePlayersViewColler" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fzZ-AK-AE1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="SZ1-jg-oNy">
-                                <rect key="frame" x="87" y="377" width="240.5" height="142.5"/>
+                                <rect key="frame" x="67.5" y="262.5" width="240.5" height="142.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="eYx-a6-Qr2">
                                         <rect key="frame" x="0.0" y="0.0" width="240.5" height="80.5"/>
@@ -141,7 +141,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyh-W4-DeN">
-                                <rect key="frame" x="167" y="100" width="80.5" height="41"/>
+                                <rect key="frame" x="147.5" y="76" width="80.5" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="8ER-qR-C2s"/>
                                 </constraints>
@@ -150,7 +150,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVL-0m-dzH">
-                                <rect key="frame" x="152.5" y="535" width="109" height="30"/>
+                                <rect key="frame" x="133" y="420.5" width="109" height="30"/>
                                 <state key="normal" title="Start the Game!"/>
                                 <connections>
                                     <action selector="startGameTapped:" destination="juE-uR-F7w" eventType="touchUpInside" id="6rM-Ez-GxC"/>
@@ -185,11 +185,11 @@
             <objects>
                 <viewController storyboardIdentifier="TypeCodeViewController" id="LAR-C4-WVo" customClass="TypeCodeViewController" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wzh-7C-Ksz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="xLh-fN-Jzw">
-                                <rect key="frame" x="44" y="377" width="326.5" height="142.5"/>
+                                <rect key="frame" x="24.5" y="262.5" width="326.5" height="142.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="qlz-vz-YT6">
                                         <rect key="frame" x="0.0" y="0.0" width="326.5" height="80.5"/>
@@ -221,7 +221,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMP-02-vo7">
-                                <rect key="frame" x="167" y="100" width="80.5" height="41"/>
+                                <rect key="frame" x="147.5" y="76" width="80.5" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="gVs-fN-n2Q"/>
                                 </constraints>
@@ -252,11 +252,11 @@
             <objects>
                 <viewController storyboardIdentifier="TimerViewController" id="tPa-6h-DZ0" customClass="TimerViewController" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u5O-h1-Way">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="VAE-pV-IHU">
-                                <rect key="frame" x="140" y="350" width="134" height="196"/>
+                                <rect key="frame" x="120.5" y="235.5" width="134" height="196"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCm-j0-Uu9">
                                         <rect key="frame" x="9" y="0.0" width="116.5" height="57.5"/>
@@ -284,7 +284,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Players joined with your code:" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSt-NT-JNP">
-                                <rect key="frame" x="20" y="44" width="374" height="298"/>
+                                <rect key="frame" x="20" y="20" width="335" height="207.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -312,12 +312,77 @@
             </objects>
             <point key="canvasLocation" x="2626.0869565217395" y="125.89285714285714"/>
         </scene>
+        <!--Seekers View Controller-->
+        <scene sceneID="7aj-5S-VEW">
+            <objects>
+                <tableViewController storyboardIdentifier="SeekersViewController" id="SZ3-Xr-tMB" customClass="SeekersViewController" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fws-ka-fV8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="ggA-DL-wvl" style="IBUITableViewCellStyleDefault" id="BcX-1a-7uU">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BcX-1a-7uU" id="3Ax-5O-EW0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ggA-DL-wvl">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="delegate" destination="SZ3-Xr-tMB" id="NiM-TO-TpH"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="etj-zR-nyl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3361" y="-259"/>
+        </scene>
+        <!--Catch Hider View Controller-->
+        <scene sceneID="vdt-Ip-XaA">
+            <objects>
+                <viewController storyboardIdentifier="CatchHiderViewController" id="oGA-To-DX3" customClass="CatchHiderViewController" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7ka-8D-AbP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5tc-27-ntz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5tc-27-ntz" firstAttribute="trailing" secondItem="5dk-Yp-JEv" secondAttribute="trailing" id="2wR-04-WAz"/>
+                            <constraint firstItem="5tc-27-ntz" firstAttribute="top" secondItem="7ka-8D-AbP" secondAttribute="top" id="Gb9-fT-oXq"/>
+                            <constraint firstItem="5tc-27-ntz" firstAttribute="bottom" secondItem="5dk-Yp-JEv" secondAttribute="bottom" id="Vs7-Yd-HN3"/>
+                            <constraint firstItem="5tc-27-ntz" firstAttribute="leading" secondItem="5dk-Yp-JEv" secondAttribute="leading" id="zKb-rD-9zu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5dk-Yp-JEv"/>
+                    </view>
+                    <connections>
+                        <outlet property="hidersColorOutlet" destination="5tc-27-ntz" id="Fi9-8D-pfI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pfP-L7-p9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4221.6000000000004" y="-253.2233883058471"/>
+        </scene>
         <!--Hiders View Controller-->
         <scene sceneID="Cbu-pj-do5">
             <objects>
                 <viewController storyboardIdentifier="HidersViewController" id="h6W-Hx-xp3" customClass="HidersViewController" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OyB-uW-55f">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hiders' View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mD-rM-fI4">
@@ -335,45 +400,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AJq-Ek-uke" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3361" y="453"/>
-        </scene>
-        <!--Seekers View Controlller-->
-        <scene sceneID="HO0-BG-I7d">
-            <objects>
-                <viewController storyboardIdentifier="SeekersViewControlller" id="2cG-Ui-iUP" customClass="SeekersViewControlller" customModule="HideAndSeek" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ntH-od-Tgy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seeker's View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xxu-8M-4nf">
-                                <rect key="frame" x="160" y="254" width="107" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7le-aB-Mxg">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <connections>
-                                    <outlet property="delegate" destination="2cG-Ui-iUP" id="6qK-Tl-e4J"/>
-                                </connections>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="7le-aB-Mxg" firstAttribute="bottom" secondItem="Rd7-0r-rvT" secondAttribute="bottom" id="ch8-KE-Eid"/>
-                            <constraint firstItem="7le-aB-Mxg" firstAttribute="top" secondItem="Rd7-0r-rvT" secondAttribute="top" id="dKs-47-qLB"/>
-                            <constraint firstItem="7le-aB-Mxg" firstAttribute="leading" secondItem="Rd7-0r-rvT" secondAttribute="leading" id="drZ-ZY-TzU"/>
-                            <constraint firstItem="7le-aB-Mxg" firstAttribute="trailing" secondItem="Rd7-0r-rvT" secondAttribute="trailing" id="zfC-fi-BCA"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Rd7-0r-rvT"/>
-                    </view>
-                    <connections>
-                        <outlet property="mapView" destination="7le-aB-Mxg" id="nug-Ur-Ym5"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uVU-aV-pqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3360.8695652173915" y="-258.48214285714283"/>
         </scene>
     </scenes>
 </document>

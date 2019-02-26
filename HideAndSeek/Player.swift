@@ -12,28 +12,29 @@ import FirebaseDatabase
 
 class Player: NSObject {
 
-    var name: String
-    var latitude: String
-    var longitude: String
+    
+//    var geoLatitude: String?
+//    var geoLongitude: String?
+    var name: String?
     //var geoLocation: String
-    var code: String?
-    let ref: DatabaseReference?
+    //var code: String?
+    //let ref: DatabaseReference?
 
-    init(name: String, latitude: String, longitude: String) {
-        self.name = name
-        self.latitude = latitude
-        self.longitude = longitude
-        self.ref = nil
-    }
+//    init(name: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+//        self.name = name
+//        self.latitude = latitude
+//        self.longitude = longitude
+//        self.ref = nil
+//    }
 
-    init?(snapshot: DataSnapshot) {
-        guard let values = snapshot.value as? [String: Any] else { return nil }
-        
-        self.name = values["name"] as! String //Do it differently when there are no names
-        self.latitude = values["geoLatitude"] as! String
-        self.longitude = values["geoLongitude"] as! String
-        self.ref = snapshot.ref
-    }
+//    init?(snapshot: DataSnapshot) {
+//        guard let values = snapshot.value as? [String: Any] else { return nil }
+//        
+//        self.name = values["name"] as? String //Do it differently when there are no names
+//        self.latitude = values["geoLatitude"] as? CLLocationDegrees
+//        self.longitude = values["geoLongitude"] as? CLLocationDegrees
+//        self.ref = snapshot.ref
+//    }
 
 }
 

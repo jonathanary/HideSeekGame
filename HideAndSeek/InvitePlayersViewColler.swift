@@ -21,11 +21,10 @@ class InvitePlayersViewColler: UIViewController, Storyboarded {
     @IBOutlet weak var saveLabel: UIButton!
     @IBOutlet weak var instructionsLabel: UILabel!
     @IBOutlet weak var startGameLabel: UIButton!
-    var isPlayer = false
+    var isHider = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //startReference = startReference.child(date)
         codeLabel.isHidden = true
         startGameLabel.isHidden = true
     }
@@ -67,6 +66,6 @@ class InvitePlayersViewColler: UIViewController, Storyboarded {
     
     
     @IBAction func startGameTapped(_ sender: Any) {
-        coordinator?.goToTimerView(asPlayer: isPlayer)
+        coordinator?.goToTimerView(asHider: false)
     }
 }

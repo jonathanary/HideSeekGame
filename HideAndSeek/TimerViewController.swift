@@ -13,10 +13,11 @@ import FirebaseDatabase
 class TimerViewController: UIViewController, Storyboarded {
     
     weak var coordinator: MainCoordinator?
-    var isPlayer = true
+    var isHider = false
     var reference = GameDataBase.reference
     var timerFireBase = GameDataBase.timerReference
-
+    var players = [Player]()
+    
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var secondsLabel: UILabel!
     @IBOutlet weak var startTimeLabel: UIButton!
@@ -24,8 +25,29 @@ class TimerViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.playersNameListLabel.text = ""
+        
+        
+        reference.observe(.childAdded) { (snapshot) in
+            
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                self.players = [Player]()
+                let player = Player()
+                //player.setValuesForKeys(dictionary)
+                player.name = dictionary["name"] as? String
+                self.players.append(player)
+               // print(self.players)
+                for aPlayer in (self.players) {
+                    self.playersNameListLabel.text?.append("\(aPlayer.name ?? "") ")
+                    GameDataBase.hiders.append(aPlayer.name ?? "")
+                }
+                
+            }
+            
+        }
 
-        if isPlayer == true {
+        if isHider == true {
             timerLabel.text = "Run and Hide!"
             startTimeLabel.isHidden = true
             timerFireBase.observe(.value) { (snapshot) in
@@ -33,35 +55,43 @@ class TimerViewController: UIViewController, Storyboarded {
                 if let secondsLeftToHide = snapshot.value as? Int {
                     print(secondsLeftToHide)
                     self.secondsLabel.text = String(secondsLeftToHide)
-                    if secondsLeftToHide == 0 {
-                        self.coordinator?.goToSeekersView(asPlayer: self.isPlayer)
-                    }
+                    if secondsLeftToHide == 60 {
+                        self.coordinator?.goToHidersView()}
+                    
                 }
             }
             
-        } else {
             
-            var names = [String]()
-            self.playersNameListLabel.text = ""
-            reference.observe(.childAdded) { (snapshot) in
-                
-                if let player = Player(snapshot: snapshot) {
-                    let pName = player.name
-                    print(pName)
-                    names.append(pName)
-                    for name in names {
-                        self.playersNameListLabel.text?.append(contentsOf: name)
-                    }
-                    self.playersNameListLabel.text?.append(" joined the game!")
-                }
-            }
+            
         }
-        
-        
+//        else {
+//
+//            //var names = [String]()
+//            self.playersNameListLabel.text = ""
+//
+//            reference.observe(.childAdded) { (snapshot) in
+//                self.players = [Player]()
+//                if let dictionary = snapshot.value as? [String: AnyObject] {
+//                    let player = Player()
+//                    //player.setValuesForKeys(dictionary)
+//                    player.name = dictionary["name"] as? String
+//                    self.players.append(player)
+//
+//                    for aPlayer in (self.players) {
+//                        self.playersNameListLabel.text?.append("\(aPlayer.name ?? "") ")
+//                        GameDataBase.hiders.append(aPlayer.name ?? "")
+//                    }
+//
+//                }
+//
+//            }
+//
+//        }
         
     }
     
     @IBAction func startTimerTapped(_ sender: Any) {
+        self.isHider = false
         timerLabel.text = "Wait for it!"
         startTimeLabel.isHidden = true
         var gameTimer: Timer!
@@ -70,16 +100,16 @@ class TimerViewController: UIViewController, Storyboarded {
             runCount -= 1
             self.secondsLabel.text = ("\(runCount)")
             self.timerFireBase.setValue(runCount)
-            if runCount == 0 {
+            if runCount == 56 {
                 gameTimer.invalidate()
-                
+                self.coordinator?.goToSeekersView(asHider: self.isHider)
+                self.timerFireBase.setValue(60)
                 // coordinator
-                if self.isPlayer == true {
-                    self.coordinator?.goToSeekersView(asPlayer: self.isPlayer)
-                } else {
-                    self.coordinator?.goToSeekersView(asPlayer: self.isPlayer)
-                    self.timerFireBase.setValue(60)
-                }
+//                if self.isHider == true {
+//                    self.coordinator?.goToSeekersView(asHider: self.isHider)
+//                } else {
+//                    
+//                }
                 
             }
         }

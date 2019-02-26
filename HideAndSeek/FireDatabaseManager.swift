@@ -21,6 +21,8 @@ class GameDataBase {
     static let userName = Auth.auth().currentUser?.displayName
     var code = ""
     
+    static var hiders = [String]()
+    
     init?(codeSnapshot: DataSnapshot) {
         GameDataBase.reference.child("code").observe(.value) { (snapshot) in
             self.code = snapshot.value as! String
