@@ -17,7 +17,7 @@ class GameDataBase {
     static let reference = Database.database().reference().child(date)
     
     //static let timerReference = Database.database().reference().child("\(date)TIMER")
-    static let userID = Auth.auth().currentUser?.uid
+    //static let userID = Auth.auth().currentUser?.uid
     static let userName = Auth.auth().currentUser?.displayName
     var code = ""
     

@@ -91,7 +91,7 @@ class CatchHiderViewController: UIViewController, Storyboarded, CLLocationManage
                     print("Unknown Proximity")
                     self.hidersColorOutlet.alpha = 0
                     self.messageLabel.textColor = .darkGray
-                    self.messageLabel.text = "\(hider) is far, or closed the app"
+                    self.messageLabel.text = "\(hider) is too far, or closed the app"
                 } else if beacon.proximity == CLProximity.immediate {
                     print("Immediate Proximity")
                     self.hidersColorOutlet.alpha = 1
@@ -106,7 +106,7 @@ class CatchHiderViewController: UIViewController, Storyboarded, CLLocationManage
                     print("Far Proximity")
                     self.hidersColorOutlet.alpha = 0.3
                     self.messageLabel.textColor = .gray
-                    self.messageLabel.text = "\(hider) is not so far"
+                    self.messageLabel.text = "\(hider) is in range!"
                 }
             }
             

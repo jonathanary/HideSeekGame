@@ -46,7 +46,7 @@ class SeekersDataSource: NSObject, UITableViewDataSource {
                 print(hiders)
             }
         }
-        var hider = hiders[0]
+       // var hider = hiders[0]
         cell.textLabel!.text = hider.name
         
         return cell
