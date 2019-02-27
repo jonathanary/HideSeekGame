@@ -11,39 +11,38 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class TypeCodeViewController: UIViewController, Storyboarded {
-    
-    var reference = GameDataBase.reference
-    var userReference = GameDataBase.userRefByAutoID
+    weak var coordinator: MainCoordinator?
+    var reference = GameDatabase.reference
+    var userReference = GameDatabase.userRefByName
     var isHider = true
-    let username = GameDataBase.userName
+    let username = GameDatabase.userName
     
+    @IBOutlet var instructionsLabel: UILabel!
     @IBOutlet weak var codeTextField: UITextField!
     
-    weak var coordinator: MainCoordinator?
     override func viewDidLoad() {
         super.viewDidLoad()
     }  
     
     @IBAction func joinGameTapped(_ sender: Any) {
-        
         let code = codeTextField.text
         if code == "" {
-            //#warning("Handle the error")
-        } else {
+            instructionsLabel.textColor = .red
+            instructionsLabel.text = "Please ask for the code from the Seeker, to play!"
             
+        } else {
+    
             reference.child("code").observeSingleEvent(of: .value) { (snapshot) in
-                
                 let codeFromDB = snapshot.value as? String
-                //print(codeFromDB)
+                
                 if codeFromDB == code! {
-                    
                     self.userReference.setValue(["name": self.username!])
                     self.coordinator?.goToTimerView(asHider: self.isHider)
-                } else {
-                    // handle error
                     
+                } else {
+                    self.instructionsLabel.textColor = .red
+                    self.instructionsLabel.text = "That's not correct, please ask again!"
                 }
-                
             }
         }
     }

@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class GameDate {
     
     private static var formattedDate = { ()-> String in
@@ -22,5 +21,4 @@ class GameDate {
     class func shared() -> String {
         return formattedDate()
     }
-    
 }

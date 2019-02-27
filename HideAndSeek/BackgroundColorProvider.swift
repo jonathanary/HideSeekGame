@@ -12,7 +12,7 @@ import GameKit
 struct BackgoundColorProvider {
     let colors = [
         UIColor(red: 90/255.0, green: 187/255.0, blue: 181/255.0, alpha: 1.0), //teal color
-        UIColor(red: 222/255.0, green: 171/255.0, blue: 66/255.0, alpha: 1.0), //yellow color
+        .brown, //brown
         .cyan, //red
         .magenta, //magenta
         UIColor(red: 77/255.0, green: 75/255.0, blue: 82/255.0, alpha: 1.0), //dark color

@@ -17,7 +17,7 @@ extension Character {
     }
 }
 
-struct CodeTrimmer {
+struct CodeTrimmers {
     static func trim(_ str: String?) -> String {
         var trimmedStr = ""
         if let string = str {
@@ -25,18 +25,17 @@ struct CodeTrimmer {
         }
         return trimmedStr
     }
+    
+    static func setMajor(with username: String) -> UInt16 {
+        var n = 8549
+        for i in username {
+            let numberFromUsername = i.asciiValue
+            n -= numberFromUsername
+            if n < 0 {
+                n += numberFromUsername
+            }
+        }
+        return UInt16(n)
+    }
 }
-
-//struct UsernameAsMajorBeacon {
-//    static func getMajorBeacon(from username: String, _ major: Int) -> Int {
-//        for i in username {
-//            let numberFromUsername = i.asciiValue
-//            
-//            n -= numberFromUsername
-//            if n < 0 {
-//                n += numberFromUsername
-//            }
-//        }
-//    }
-//}
 

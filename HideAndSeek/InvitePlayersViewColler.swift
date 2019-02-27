@@ -1,5 +1,5 @@
 //
-//  CodeViewController.swift
+//  InvitePlayersViewColler.swift
 //  HideAndSeek
 //
 //  Created by Jonathan on 2019. 02. 06..
@@ -11,10 +11,8 @@ import Firebase
 import FirebaseDatabase
 
 class InvitePlayersViewColler: UIViewController, Storyboarded {
-
     weak var coordinator: MainCoordinator?
-    let date = GameDate.shared()
-    var startReference = GameDataBase.reference
+    var reference = GameDatabase.reference
     
     @IBOutlet weak var codeTextField: UITextField!
     @IBOutlet weak var codeLabel: UILabel!
@@ -22,50 +20,39 @@ class InvitePlayersViewColler: UIViewController, Storyboarded {
     @IBOutlet weak var instructionsLabel: UILabel!
     @IBOutlet weak var startGameLabel: UIButton!
     var isHider = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        reference.removeValue()
         codeLabel.isHidden = true
         startGameLabel.isHidden = true
     }
 
     @IBAction func saveTapped(_ sender: Any) {
-        
         let code = codeTextField.text
+        
         if code == "" {
-            
-            #warning("Handle the error")
+            instructionsLabel.textColor = .red
+            instructionsLabel.text = "Please come up with a code ;)"
             
         } else {
-            
             codeTextField.isHidden = true
-            //let trimmedCode = code!.replacingOccurrences(of: " ", with: "").lowercased()
-            let trimmedCode = CodeTrimmer.trim(code)
-            GameDataBase.setCode(trimmedCode)
-            //startReference.child("code").setValue(trimmedCode)
-            //GameDataBase.getCode(void)
+            let trimmedCode = CodeTrimmers.trim(code)
+            GameDatabase.setCode(trimmedCode)
             
-            //print(newCode)
-//            self.codeLabel.text = newCode
-//            self.codeLabel.isHidden = false
-//            self.saveLabel.isHidden = true
-//            self.instructionsLabel.text = "Tell your code so others can join!"
-//            self.startGameLabel.isHidden = false
-            
-            startReference.child("code").observeSingleEvent(of: .value) { (snapshot) in
+            reference.child("code").observeSingleEvent(of: .value) { (snapshot) in
                 let newCode = snapshot.value as! String
                 print(newCode)
                 self.codeLabel.text = newCode
                 self.codeLabel.isHidden = false
                 self.saveLabel.isHidden = true
-                self.instructionsLabel.text = "Tell your code so others can join!"
+                self.instructionsLabel.text = "Tell your code, so others can join!"
                 self.startGameLabel.isHidden = false
             }
         }
     }
     
-    
     @IBAction func startGameTapped(_ sender: Any) {
-        coordinator?.goToTimerView(asHider: false)
+        coordinator?.goToTimerView(asHider: isHider)
     }
 }

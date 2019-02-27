@@ -7,53 +7,22 @@
 
 import UIKit
 import FirebaseDatabase
-//import MapKit
 import CoreLocation
 
 
 class SeekersViewController: UITableViewController, Storyboarded {
-    
-
-    //var dataSource = SeekersDataSource()
-    //var lastTimeStamp = Date()
-    
-    //Beacon Region
-    
+    weak var coordinator: MainCoordinator?
     var locationManager: CLLocationManager!
     var isHider = false
-    
     var selectedHider: String!
-    
-    weak var coordinator: MainCoordinator?
-    var reference = GameDataBase.reference
-    let userReference = GameDataBase.userRefByAutoID
+    var reference = GameDatabase.reference
+    let userReference = GameDatabase.userRefByName
     var hidersArray = [Player]()
-    //var activeHidersInRange = 0
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         fetchUser()
-        
-        
-        //dataSource.fetchUser()
-        //print(dataSource.hiders)
-//        self.tableView.reloadData()
-        //tableView.dataSource = dataSource
-//        DispatchQueue.global(qos: .utility).async {
-//
-//        }
-       // insertNewObject()
-       
-//        if isHider {
-//
-//            } else {
-//
-//            }
-        }
-    
-    
+    }
     
     func fetchUser() {
         reference.observe(.childAdded, with: { (snapshot) in
@@ -74,14 +43,10 @@ class SeekersViewController: UITableViewController, Storyboarded {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
         let hider = hidersArray[indexPath.row]
         cell.textLabel?.text = hider.name
-        
         return cell
     }
-    
-    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let hider = hidersArray[indexPath.row]
@@ -89,35 +54,4 @@ class SeekersViewController: UITableViewController, Storyboarded {
         print(hider.name!)
         coordinator?.goToCatchView(with: selectedHider)
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        dataSource.fetchUser()
-//    }
-//    override func viewDidAppear(_ animated: Bool) {
-//        dataSource.fetchUser()
-//        print(dataSource.hiders)
-//    }
-    
-//    func addAllPlayers() {
-//        //dataSource.objects
-//    }
-    
-    //Tracking Beacons methods
-    
-    
-    
-//    func givePlayersColors() {
-//        for i in 1...activeHidersInRange {
-//
-//        }
-//    }
-    
-    
-    
-//    func insertNewObject() {
-//        dataSource.objects.insert(NSDate(), at: 0)
-//        let indexPath = IndexPath(row: 0, section: 0)
-//        tableView.insertRows(at: [indexPath], with: .automatic)
-//    }
-    
 }
