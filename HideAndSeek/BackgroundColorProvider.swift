@@ -19,6 +19,7 @@ struct BackgoundColorProvider {
         UIColor(red: 105/255.0, green: 94/255.0, blue: 133/255.0, alpha: 1.0), //purple color
         UIColor(red: 85/255.0, green: 176/255.0, blue: 112/255.0, alpha: 1.0), //green color
     ]
+    
     func randomColor() -> UIColor {
         let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: colors.count)
         return colors[randomNumber]

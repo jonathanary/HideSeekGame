@@ -16,6 +16,7 @@ class GameDate {
         dateFormatter.dateFormat = "MMMM-dd-yyyy"
         return dateFormatter.string(from: date)
     }
+    
     private init() {}
     
     class func shared() -> String {
