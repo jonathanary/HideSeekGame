@@ -13,13 +13,14 @@ import FirebaseDatabase
 class InvitePlayersViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
     var reference = GameDatabase.gameReference
+    var isHider = false
     
     @IBOutlet weak var codeTextField: UITextField!
     @IBOutlet weak var codeLabel: UILabel!
     @IBOutlet weak var saveLabel: UIButton!
     @IBOutlet weak var instructionsLabel: UILabel!
     @IBOutlet weak var startGameLabel: UIButton!
-    var isHider = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class InvitePlayersViewController: UIViewController, Storyboarded {
 
     @IBAction func saveTapped(_ sender: Any) {
         let code = codeTextField.text
-        
+    
         if code == "" {
             instructionsLabel.textColor = .red
             instructionsLabel.text = "Please come up with a code ;)"

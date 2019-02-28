@@ -137,6 +137,14 @@
 			path = "Network Manager";
 			sourceTree = "<group>";
 		};
+		AB9DFF6822283A9600E6625D /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				ABD000B022086A360022AA41 /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		ABD000A422086A360022AA41 = {
 			isa = PBXGroup;
 			children = (
@@ -158,7 +166,7 @@
 		ABD000AF22086A360022AA41 /* HideAndSeek */ = {
 			isa = PBXGroup;
 			children = (
-				ABD000B022086A360022AA41 /* AppDelegate.swift */,
+				AB9DFF6822283A9600E6625D /* Delegates */,
 				ABD000B422086A360022AA41 /* Main.storyboard */,
 				ABD000B922086A390022AA41 /* LaunchScreen.storyboard */,
 				ABD000BC22086A390022AA41 /* Info.plist */,

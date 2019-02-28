@@ -14,8 +14,8 @@ class TypeCodeViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
     var reference = GameDatabase.gameReference
     var userReference = GameDatabase.userRefByName
-    var isHider = true
     let username = GameDatabase.userName
+    var isHider = true
     
     @IBOutlet var instructionsLabel: UILabel!
     @IBOutlet weak var codeTextField: UITextField!

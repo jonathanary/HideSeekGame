@@ -23,7 +23,6 @@ class HidersViewController: UIViewController, Storyboarded, CBPeripheralManagerD
     override func viewDidLoad() {
         super.viewDidLoad()
         initBeaconRegion()
-        //locationManager.requestAlwaysAuthorization()??
         beaconPeripheralData = beaconRegion.peripheralData(withMeasuredPower: nil)
         peripheralManager = CBPeripheralManager.init(delegate: self, queue: nil)
     }

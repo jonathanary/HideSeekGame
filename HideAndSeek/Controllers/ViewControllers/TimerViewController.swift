@@ -9,7 +9,6 @@
 import UIKit
 import FirebaseDatabase
 
-
 class TimerViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
     var reference = GameDatabase.gameReference
@@ -21,7 +20,6 @@ class TimerViewController: UIViewController, Storyboarded {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var secondsLabel: UILabel!
     @IBOutlet weak var startTimeLabel: UIButton!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
