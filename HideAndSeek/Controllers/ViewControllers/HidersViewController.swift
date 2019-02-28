@@ -13,7 +13,7 @@ import FirebaseDatabase
 
 class HidersViewController: UIViewController, Storyboarded, CBPeripheralManagerDelegate {
     weak var coordinator: MainCoordinator?
-    var reference = GameDatabase.reference
+    var reference = GameDatabase.gameReference
     let username = GameDatabase.userName
     var beaconRegion: CLBeaconRegion!
     var beaconPeripheralData : NSDictionary!

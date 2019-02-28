@@ -15,11 +15,11 @@ class ChooseViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
     }
 
-    @IBAction func imItButtonTapped(_ sender: Any) {
+    @IBAction func imASeekerButtonTapped(_ sender: Any) {
         coordinator?.goToCodeView()
     }
     
-    @IBAction func imAPlayerTapped(_ sender: Any) {
+    @IBAction func imAHiderTapped(_ sender: Any) {
         coordinator?.goToTypeCodeView()
     }
 }

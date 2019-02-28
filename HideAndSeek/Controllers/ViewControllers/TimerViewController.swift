@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 class TimerViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
-    var reference = GameDatabase.reference
+    var reference = GameDatabase.gameReference
     var timerFireBase = GameDatabase.timerReference
     var players = [Player]()
     var isHider = false

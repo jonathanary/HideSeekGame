@@ -13,7 +13,6 @@ import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
     var coordinator: MainCoordinator?
     var window: UIWindow?
 
@@ -27,9 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
-        
         FirebaseApp.configure()
-        
         return true
     }
 

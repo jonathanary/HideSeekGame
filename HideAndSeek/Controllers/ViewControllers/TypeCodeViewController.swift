@@ -12,7 +12,7 @@ import FirebaseAuth
 
 class TypeCodeViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
-    var reference = GameDatabase.reference
+    var reference = GameDatabase.gameReference
     var userReference = GameDatabase.userRefByName
     var isHider = true
     let username = GameDatabase.userName

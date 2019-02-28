@@ -15,7 +15,7 @@ class SeekersViewController: UITableViewController, Storyboarded {
     var locationManager: CLLocationManager!
     var isHider = false
     var selectedHider: String!
-    var reference = GameDatabase.reference
+    var reference = GameDatabase.gameReference
     let userReference = GameDatabase.userRefByName
     var hidersArray = [Player]()
 

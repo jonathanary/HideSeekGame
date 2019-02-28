@@ -11,9 +11,8 @@
 		AB059A81222535320054390E /* CatchHiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB059A80222535320054390E /* CatchHiderViewController.swift */; };
 		AB059A8322258FCA0054390E /* BackgroundColorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB059A8222258FCA0054390E /* BackgroundColorProvider.swift */; };
 		AB3E57EB2208E4CE002C3C4A /* ChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57EA2208E4CE002C3C4A /* ChooseViewController.swift */; };
-		AB3E57EF220B2C8B002C3C4A /* InvitePlayersViewColler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57EE220B2C8B002C3C4A /* InvitePlayersViewColler.swift */; };
+		AB3E57EF220B2C8B002C3C4A /* InvitePlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57EE220B2C8B002C3C4A /* InvitePlayersViewController.swift */; };
 		AB3E57F1220B33E8002C3C4A /* TypeCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57F0220B33E8002C3C4A /* TypeCodeViewController.swift */; };
-		AB3E57F3220B39D4002C3C4A /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57F2220B39D4002C3C4A /* Errors.swift */; };
 		AB3E57F5220BF153002C3C4A /* GameDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57F4220BF153002C3C4A /* GameDatabase.swift */; };
 		AB3E57F7220CC51A002C3C4A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57F6220CC51A002C3C4A /* Player.swift */; };
 		AB3E57F9220D74B2002C3C4A /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57F8220D74B2002C3C4A /* TimerViewController.swift */; };
@@ -39,9 +38,8 @@
 		AB059A80222535320054390E /* CatchHiderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchHiderViewController.swift; sourceTree = "<group>"; };
 		AB059A8222258FCA0054390E /* BackgroundColorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorProvider.swift; sourceTree = "<group>"; };
 		AB3E57EA2208E4CE002C3C4A /* ChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseViewController.swift; sourceTree = "<group>"; };
-		AB3E57EE220B2C8B002C3C4A /* InvitePlayersViewColler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitePlayersViewColler.swift; sourceTree = "<group>"; };
+		AB3E57EE220B2C8B002C3C4A /* InvitePlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitePlayersViewController.swift; sourceTree = "<group>"; };
 		AB3E57F0220B33E8002C3C4A /* TypeCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCodeViewController.swift; sourceTree = "<group>"; };
-		AB3E57F2220B39D4002C3C4A /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		AB3E57F4220BF153002C3C4A /* GameDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDatabase.swift; sourceTree = "<group>"; };
 		AB3E57F6220CC51A002C3C4A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		AB3E57F8220D74B2002C3C4A /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +58,7 @@
 		ABD000B722086A390022AA41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABD000BA22086A390022AA41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABD000BC22086A390022AA41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ABD000C222086D1B0022AA41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		ABD000C222086D1B0022AA41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "HideAndSeek/Supporting Files/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F107569CFA65F4A3B998F6C6 /* Pods-HideAndSeek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HideAndSeek.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HideAndSeek/Pods-HideAndSeek.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +74,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB9DFF62222818A500E6625D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABC304FA22132B1E008F97FB /* CodeTrimmers.swift */,
+				AB059A8222258FCA0054390E /* BackgroundColorProvider.swift */,
+				ABC304F82211854D008F97FB /* GameDate.swift */,
+				ABD000B722086A390022AA41 /* Assets.xcassets */,
+				ABD000C222086D1B0022AA41 /* GoogleService-Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AB9DFF63222818F500E6625D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ABD000B222086A360022AA41 /* ViewController.swift */,
+				AB3E57EA2208E4CE002C3C4A /* ChooseViewController.swift */,
+				AB3E57EE220B2C8B002C3C4A /* InvitePlayersViewController.swift */,
+				AB3E57F0220B33E8002C3C4A /* TypeCodeViewController.swift */,
+				AB3E57F8220D74B2002C3C4A /* TimerViewController.swift */,
+				ABC304D322106CDF008F97FB /* HidersViewController.swift */,
+				ABC304F622117AE9008F97FB /* SeekersViewController.swift */,
+				AB059A80222535320054390E /* CatchHiderViewController.swift */,
+				AB507CE2222160D400141F75 /* SeekersDataSource.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AB9DFF642228192300E6625D /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				ABB1ED9A2208D1E900C5BE0E /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		AB9DFF652228199F00E6625D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ABB1ED962208CCC200C5BE0E /* Coordinator.swift */,
+				ABB1ED982208CD5A00C5BE0E /* Storyboarded.swift */,
+				AB3E57F6220CC51A002C3C4A /* Player.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AB9DFF6622281B6B00E6625D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB9DFF642228192300E6625D /* Coordinators */,
+				AB9DFF63222818F500E6625D /* ViewControllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AB9DFF6722281C8100E6625D /* Network Manager */ = {
+			isa = PBXGroup;
+			children = (
+				AB3E57F4220BF153002C3C4A /* GameDatabase.swift */,
+			);
+			path = "Network Manager";
+			sourceTree = "<group>";
+		};
 		ABD000A422086A360022AA41 = {
 			isa = PBXGroup;
 			children = (
@@ -98,29 +159,13 @@
 			isa = PBXGroup;
 			children = (
 				ABD000B022086A360022AA41 /* AppDelegate.swift */,
-				ABC304FA22132B1E008F97FB /* CodeTrimmers.swift */,
-				AB059A8222258FCA0054390E /* BackgroundColorProvider.swift */,
-				ABC304F82211854D008F97FB /* GameDate.swift */,
-				AB3E57F4220BF153002C3C4A /* GameDatabase.swift */,
-				AB3E57F6220CC51A002C3C4A /* Player.swift */,
-				AB3E57F2220B39D4002C3C4A /* Errors.swift */,
-				ABB1ED982208CD5A00C5BE0E /* Storyboarded.swift */,
-				ABB1ED962208CCC200C5BE0E /* Coordinator.swift */,
-				ABB1ED9A2208D1E900C5BE0E /* MainCoordinator.swift */,
-				ABD000B222086A360022AA41 /* ViewController.swift */,
-				AB3E57EA2208E4CE002C3C4A /* ChooseViewController.swift */,
-				AB3E57EE220B2C8B002C3C4A /* InvitePlayersViewColler.swift */,
-				AB3E57F0220B33E8002C3C4A /* TypeCodeViewController.swift */,
-				AB3E57F8220D74B2002C3C4A /* TimerViewController.swift */,
-				ABC304D322106CDF008F97FB /* HidersViewController.swift */,
-				ABC304F622117AE9008F97FB /* SeekersViewController.swift */,
-				AB059A80222535320054390E /* CatchHiderViewController.swift */,
-				AB507CE2222160D400141F75 /* SeekersDataSource.swift */,
 				ABD000B422086A360022AA41 /* Main.storyboard */,
-				ABD000B722086A390022AA41 /* Assets.xcassets */,
 				ABD000B922086A390022AA41 /* LaunchScreen.storyboard */,
-				ABD000C222086D1B0022AA41 /* GoogleService-Info.plist */,
 				ABD000BC22086A390022AA41 /* Info.plist */,
+				AB9DFF6622281B6B00E6625D /* Controllers */,
+				AB9DFF6722281C8100E6625D /* Network Manager */,
+				AB9DFF652228199F00E6625D /* Models */,
+				AB9DFF62222818A500E6625D /* Supporting Files */,
 			);
 			path = HideAndSeek;
 			sourceTree = "<group>";
@@ -299,8 +344,7 @@
 				AB507CE3222160D400141F75 /* SeekersDataSource.swift in Sources */,
 				ABC304FB22132B1E008F97FB /* CodeTrimmers.swift in Sources */,
 				ABB1ED9B2208D1E900C5BE0E /* MainCoordinator.swift in Sources */,
-				AB3E57F3220B39D4002C3C4A /* Errors.swift in Sources */,
-				AB3E57EF220B2C8B002C3C4A /* InvitePlayersViewColler.swift in Sources */,
+				AB3E57EF220B2C8B002C3C4A /* InvitePlayersViewController.swift in Sources */,
 				AB3E57F9220D74B2002C3C4A /* TimerViewController.swift in Sources */,
 				ABC304F722117AE9008F97FB /* SeekersViewController.swift in Sources */,
 				ABB1ED992208CD5A00C5BE0E /* Storyboarded.swift in Sources */,

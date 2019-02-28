@@ -10,9 +10,9 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class InvitePlayersViewColler: UIViewController, Storyboarded {
+class InvitePlayersViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
-    var reference = GameDatabase.reference
+    var reference = GameDatabase.gameReference
     
     @IBOutlet weak var codeTextField: UITextField!
     @IBOutlet weak var codeLabel: UILabel!

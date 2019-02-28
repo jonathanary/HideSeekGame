@@ -15,13 +15,13 @@ let date = GameDate.shared()
 class GameDatabase {
     
     private init () {}
-    static let reference = Database.database().reference().child(date)
+    static let gameReference = Database.database().reference().child(date)
     static let userName = Auth.auth().currentUser?.displayName
     var code = ""
     
-    //For Future usage, whenever the players want to restart the game as is
+    //Might be useful in the future, whenever the players want to restart the game as is
     init?(codeSnapshot: DataSnapshot) {
-        GameDatabase.reference.child("code").observe(.value) { (snapshot) in
+        GameDatabase.gameReference.child("code").observe(.value) { (snapshot) in
             self.code = snapshot.value as! String
         }
     }
@@ -29,9 +29,9 @@ class GameDatabase {
 
 extension GameDatabase {
     static func setCode(_ code: String) {
-        GameDatabase.reference.child("code").setValue(code)
+        GameDatabase.gameReference.child("code").setValue(code)
     }
-    static var timerReference = GameDatabase.reference.child("Timer")
+    static var timerReference = GameDatabase.gameReference.child("Timer")
     static var newCode = ""
-    static var userRefByName = GameDatabase.reference.child(GameDatabase.userName!)
+    static var userRefByName = GameDatabase.gameReference.child(GameDatabase.userName!)
 }
