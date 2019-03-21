@@ -58,7 +58,6 @@ class MainCoordinator: Coordinator {
     }
     
     func goToHidersView() {
-        print(isHider)
         if isHider {
             let vc = HidersViewController.instantiate()
             vc.coordinator = self
@@ -72,7 +71,6 @@ class MainCoordinator: Coordinator {
                 navigationController.viewControllers.remove(at: index)
             }
         }
-        
     }
     
     func goToCatchView(with hider: String) {

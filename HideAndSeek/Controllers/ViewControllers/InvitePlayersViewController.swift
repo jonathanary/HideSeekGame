@@ -51,7 +51,6 @@ class InvitePlayersViewController: UIViewController, Storyboarded {
             
             reference.child("code").observeSingleEvent(of: .value) { (snapshot) in
                 let newCode = snapshot.value as! String
-                print(newCode)
                 self.codeLabel.text = newCode
                 self.codeLabel.isHidden = false
                 self.saveLabel.isHidden = true

@@ -36,20 +36,16 @@ class CatchHiderViewController: UIViewController, Storyboarded, CLLocationManage
     func getBeaconRegion() -> CLBeaconRegion {
         let beaconRegion = CLBeaconRegion.init(proximityUUID: UUID.init(uuidString: "3187820A-0780-49E7-8F89-855B433BE32F")!, major: CodeTrimmers.setMajor(with: hider), identifier: self.hider)
 
-        print(self.hider)
         return beaconRegion
     }
     
     func startScanningForBeaconRegion(beaconRegion: CLBeaconRegion) {
-        print(beaconRegion)
         locationManager.startMonitoring(for: beaconRegion)
         locationManager.startRangingBeacons(in: beaconRegion)
     }
     
     // Delegate Methods for tracking beacons and changing the view
     fileprivate func changeViewByProximity(_ beacon: CLBeacon) {
-        
-        print("\(beacon.proximity) Proximity")
         
         switch beacon.proximity {
         case .unknown:

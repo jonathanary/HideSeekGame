@@ -44,9 +44,7 @@ class TimerViewController: UIViewController, Storyboarded {
             startTimeLabel.isHidden = true
             
             timerFireBase.observe(.value) { (snapshot) in
-                print(snapshot)
                 if let secondsLeftToHide = snapshot.value as? Int {
-                    print(secondsLeftToHide)
                     self.secondsLabel.text = String(secondsLeftToHide)
                     
                     if secondsLeftToHide == 55 {

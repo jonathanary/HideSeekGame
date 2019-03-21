@@ -57,7 +57,6 @@ class SeekersViewController: UITableViewController, Storyboarded {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let hider = hidersArray[indexPath.row]
         selectedHider = hider.name
-        print(hider.name!)
         coordinator?.goToCatchView(with: selectedHider)
     }
 }
