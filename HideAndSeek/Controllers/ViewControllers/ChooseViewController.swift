@@ -10,9 +10,15 @@ import UIKit
 
 class ChooseViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
+    @IBOutlet var iHideButton: UIButton!
+    @IBOutlet var iSeekButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
     @IBAction func imASeekerButtonTapped(_ sender: Any) {

@@ -24,6 +24,10 @@
 	<string>The Seeker needs to know your location always, even if the app is in the background.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>The Seeker Player will need to get clues on where you are.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>segoe-ui-bold.ttf</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
@@ -38,7 +42,6 @@
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
-		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>

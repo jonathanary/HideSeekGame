@@ -13,8 +13,24 @@ import FirebaseUI
 
 class ViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
+    @IBOutlet var loginLabel: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //navigationController?.isToolbarHidden = true
+        
+        Auth.auth().addStateDidChangeListener() { (auth, user) in
+            if let user = user {
+                print("User is signed in with uid:", user.uid)
+                self.coordinator?.goToChooseView()
+            } else {
+                print("No user is signed in.")
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     @IBAction func loginTapped(_ sender: Any) {
@@ -29,7 +45,6 @@ class ViewController: UIViewController, Storyboarded {
 extension ViewController: FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
         guard error == nil else { return }
-        coordinator?.goToLoginAndChoseView()
-        
+        coordinator?.goToChooseView()
     }
 }

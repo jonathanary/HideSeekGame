@@ -9,8 +9,9 @@
 import UIKit
 
 class MainCoordinator: Coordinator {
-    var childCoordinators = [Coordinator]()
+    //var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
+    var isHider = true
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -22,19 +23,21 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
     
-    func goToLoginAndChoseView() {
+    func goToChooseView() {
         let vc = ChooseViewController.instantiate()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     
     func goToCodeView() {
+        isHider = false
         let vc = InvitePlayersViewController.instantiate()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     
     func goToTypeCodeView() {
+        isHider = true
         let vc = TypeCodeViewController.instantiate()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
@@ -55,9 +58,21 @@ class MainCoordinator: Coordinator {
     }
     
     func goToHidersView() {
-        let vc = HidersViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        print(isHider)
+        if isHider {
+            let vc = HidersViewController.instantiate()
+            vc.coordinator = self
+            navigationController.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func hidersViewDidDisappear(_ viewController: UIViewController) {
+        for (index, controller) in navigationController.viewControllers.enumerated() {
+            if controller === viewController {
+                navigationController.viewControllers.remove(at: index)
+            }
+        }
+        
     }
     
     func goToCatchView(with hider: String) {

@@ -46,37 +46,39 @@ class CatchHiderViewController: UIViewController, Storyboarded, CLLocationManage
         locationManager.startRangingBeacons(in: beaconRegion)
     }
     
-    // Delegate Methods for tracking beacons
+    // Delegate Methods for tracking beacons and changing the view
+    fileprivate func changeViewByProximity(_ beacon: CLBeacon) {
+        
+        print("\(beacon.proximity) Proximity")
+        
+        switch beacon.proximity {
+        case .unknown:
+            self.hidersColorOutlet.alpha = 0
+            self.messageLabel.textColor = .darkGray
+            self.messageLabel.text = "\(hider) is too far, or closed the app"
+        case .immediate:
+            self.hidersColorOutlet.alpha = 1
+            self.messageLabel.textColor = .white
+            self.messageLabel.text = "\(hider) is here!"
+        case .near:
+            self.hidersColorOutlet.alpha = 0.6
+            self.messageLabel.textColor = .white
+            self.messageLabel.text = "\(hider) is very close!"
+        case .far:
+            self.hidersColorOutlet.alpha = 0.3
+            self.messageLabel.textColor = .gray
+            self.messageLabel.text = "\(hider) is in range!"
+        }
+    }
+}
+
+extension CatchHiderViewController {
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         if beacons.count > 0 {
             print("beacons found")
             for beacon in beacons {
                 print(String(describing: beacon.accuracy))
-                
-                if beacon.proximity == CLProximity.unknown {
-                    print("Unknown Proximity")
-                    self.hidersColorOutlet.alpha = 0
-                    self.messageLabel.textColor = .darkGray
-                    self.messageLabel.text = "\(hider) is too far, or closed the app"
-                    
-                } else if beacon.proximity == CLProximity.immediate {
-                    print("Immediate Proximity")
-                    self.hidersColorOutlet.alpha = 1
-                    self.messageLabel.textColor = .white
-                    self.messageLabel.text = "\(hider) is here!"
-                    
-                } else if beacon.proximity == CLProximity.near {
-                    print("Near Proximity")
-                    self.hidersColorOutlet.alpha = 0.6
-                    self.messageLabel.textColor = .white
-                    self.messageLabel.text = "\(hider) is very close!"
-                    
-                } else if beacon.proximity == CLProximity.far {
-                    print("Far Proximity")
-                    self.hidersColorOutlet.alpha = 0.3
-                    self.messageLabel.textColor = .gray
-                    self.messageLabel.text = "\(hider) is in range!"
-                }
+                changeViewByProximity(beacon)
             }
             
         } else {

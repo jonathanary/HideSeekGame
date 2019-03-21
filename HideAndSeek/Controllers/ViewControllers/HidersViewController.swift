@@ -16,8 +16,8 @@ class HidersViewController: UIViewController, Storyboarded, CBPeripheralManagerD
     var reference = GameDatabase.gameReference
     let username = GameDatabase.userName
     var beaconRegion: CLBeaconRegion!
-    var beaconPeripheralData : NSDictionary!
-    var peripheralManager : CBPeripheralManager!
+    var beaconPeripheralData: NSDictionary!
+    var peripheralManager: CBPeripheralManager!
     var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
@@ -25,6 +25,17 @@ class HidersViewController: UIViewController, Storyboarded, CBPeripheralManagerD
         initBeaconRegion()
         beaconPeripheralData = beaconRegion.peripheralData(withMeasuredPower: nil)
         peripheralManager = CBPeripheralManager.init(delegate: self, queue: nil)
+        let backItem = UIBarButtonItem(title: "Restart", style: .plain, target: self, action: #selector(restartTapped))
+        self.navigationItem.leftBarButtonItem = backItem
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        coordinator?.hidersViewDidDisappear(self)
+    }
+    
+    @objc func restartTapped() {
+        coordinator?.goToChooseView()
     }
     
     func initBeaconRegion() {
@@ -37,11 +48,11 @@ class HidersViewController: UIViewController, Storyboarded, CBPeripheralManagerD
     // Delegate Methods for the beacons
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         if (peripheral.state == .poweredOn) {
-            peripheralManager .startAdvertising(beaconPeripheralData as? [String : Any])
+            peripheralManager.startAdvertising(beaconPeripheralData as? [String : Any])
             print("Beacons are Powered On")
             
         } else {
-            peripheralManager .stopAdvertising()
+            peripheralManager.stopAdvertising()
             print("Beacons are Not Powered On, or some other error")
         }
     }

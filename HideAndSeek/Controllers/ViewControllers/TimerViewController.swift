@@ -39,7 +39,7 @@ class TimerViewController: UIViewController, Storyboarded {
             }
         }
 
-        if isHider == true {
+        if isHider {
             timerLabel.text = "Run and Hide!"
             startTimeLabel.isHidden = true
             
@@ -49,7 +49,7 @@ class TimerViewController: UIViewController, Storyboarded {
                     print(secondsLeftToHide)
                     self.secondsLabel.text = String(secondsLeftToHide)
                     
-                    if secondsLeftToHide == 50 {
+                    if secondsLeftToHide == 55 {
                         self.coordinator?.goToHidersView()
                     }
                 }
@@ -58,7 +58,7 @@ class TimerViewController: UIViewController, Storyboarded {
     }
     
     @IBAction func startTimerTapped(_ sender: Any) {
-        self.isHider = false
+        //self.isHider = false
         timerLabel.text = "Wait for it!"
         startTimeLabel.isHidden = true
         var gameTimer: Timer!

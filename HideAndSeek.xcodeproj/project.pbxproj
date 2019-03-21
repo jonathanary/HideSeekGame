@@ -10,13 +10,13 @@
 		82E5412A902FE4179EFB8C93 /* Pods_HideAndSeek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F9DCB09D7D5C91F43AE091 /* Pods_HideAndSeek.framework */; };
 		AB059A81222535320054390E /* CatchHiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB059A80222535320054390E /* CatchHiderViewController.swift */; };
 		AB059A8322258FCA0054390E /* BackgroundColorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB059A8222258FCA0054390E /* BackgroundColorProvider.swift */; };
+		AB22AD6A22370C6B001676E7 /* segoe-ui-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB22AD6922370C6B001676E7 /* segoe-ui-bold.ttf */; };
 		AB3E57EB2208E4CE002C3C4A /* ChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57EA2208E4CE002C3C4A /* ChooseViewController.swift */; };
 		AB3E57EF220B2C8B002C3C4A /* InvitePlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57EE220B2C8B002C3C4A /* InvitePlayersViewController.swift */; };
 		AB3E57F1220B33E8002C3C4A /* TypeCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57F0220B33E8002C3C4A /* TypeCodeViewController.swift */; };
 		AB3E57F5220BF153002C3C4A /* GameDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57F4220BF153002C3C4A /* GameDatabase.swift */; };
 		AB3E57F7220CC51A002C3C4A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57F6220CC51A002C3C4A /* Player.swift */; };
 		AB3E57F9220D74B2002C3C4A /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57F8220D74B2002C3C4A /* TimerViewController.swift */; };
-		AB507CE3222160D400141F75 /* SeekersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB507CE2222160D400141F75 /* SeekersDataSource.swift */; };
 		ABB1ED972208CCC200C5BE0E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1ED962208CCC200C5BE0E /* Coordinator.swift */; };
 		ABB1ED992208CD5A00C5BE0E /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1ED982208CD5A00C5BE0E /* Storyboarded.swift */; };
 		ABB1ED9B2208D1E900C5BE0E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1ED9A2208D1E900C5BE0E /* MainCoordinator.swift */; };
@@ -37,13 +37,13 @@
 		9CECEC06EB2AEAD6AE578714 /* Pods-HideAndSeek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HideAndSeek.release.xcconfig"; path = "Pods/Target Support Files/Pods-HideAndSeek/Pods-HideAndSeek.release.xcconfig"; sourceTree = "<group>"; };
 		AB059A80222535320054390E /* CatchHiderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchHiderViewController.swift; sourceTree = "<group>"; };
 		AB059A8222258FCA0054390E /* BackgroundColorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorProvider.swift; sourceTree = "<group>"; };
+		AB22AD6922370C6B001676E7 /* segoe-ui-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "segoe-ui-bold.ttf"; sourceTree = "<group>"; };
 		AB3E57EA2208E4CE002C3C4A /* ChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseViewController.swift; sourceTree = "<group>"; };
 		AB3E57EE220B2C8B002C3C4A /* InvitePlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitePlayersViewController.swift; sourceTree = "<group>"; };
 		AB3E57F0220B33E8002C3C4A /* TypeCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCodeViewController.swift; sourceTree = "<group>"; };
 		AB3E57F4220BF153002C3C4A /* GameDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDatabase.swift; sourceTree = "<group>"; };
 		AB3E57F6220CC51A002C3C4A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		AB3E57F8220D74B2002C3C4A /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
-		AB507CE2222160D400141F75 /* SeekersDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekersDataSource.swift; sourceTree = "<group>"; };
 		ABB1ED962208CCC200C5BE0E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		ABB1ED982208CD5A00C5BE0E /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		ABB1ED9A2208D1E900C5BE0E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -77,6 +77,7 @@
 		AB9DFF62222818A500E6625D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AB22AD6922370C6B001676E7 /* segoe-ui-bold.ttf */,
 				ABC304FA22132B1E008F97FB /* CodeTrimmers.swift */,
 				AB059A8222258FCA0054390E /* BackgroundColorProvider.swift */,
 				ABC304F82211854D008F97FB /* GameDate.swift */,
@@ -97,7 +98,6 @@
 				ABC304D322106CDF008F97FB /* HidersViewController.swift */,
 				ABC304F622117AE9008F97FB /* SeekersViewController.swift */,
 				AB059A80222535320054390E /* CatchHiderViewController.swift */,
-				AB507CE2222160D400141F75 /* SeekersDataSource.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -265,6 +265,7 @@
 				ABD000C322086D1B0022AA41 /* GoogleService-Info.plist in Resources */,
 				ABD000B822086A390022AA41 /* Assets.xcassets in Resources */,
 				ABD000B622086A360022AA41 /* Main.storyboard in Resources */,
+				AB22AD6A22370C6B001676E7 /* segoe-ui-bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +350,6 @@
 				AB3E57F7220CC51A002C3C4A /* Player.swift in Sources */,
 				ABB1ED972208CCC200C5BE0E /* Coordinator.swift in Sources */,
 				AB3E57F5220BF153002C3C4A /* GameDatabase.swift in Sources */,
-				AB507CE3222160D400141F75 /* SeekersDataSource.swift in Sources */,
 				ABC304FB22132B1E008F97FB /* CodeTrimmers.swift in Sources */,
 				ABB1ED9B2208D1E900C5BE0E /* MainCoordinator.swift in Sources */,
 				AB3E57EF220B2C8B002C3C4A /* InvitePlayersViewController.swift in Sources */,

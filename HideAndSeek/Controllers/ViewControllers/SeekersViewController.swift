@@ -3,7 +3,6 @@
 //  
 //
 //  Created by Jonathan on 2019. 02. 10..
-//  make an array with their names. the names should indicate the beacons' regions. whenever the seeker taps the  I found? button, the respective name should disappear from the array
 
 import UIKit
 import FirebaseDatabase
@@ -21,10 +20,17 @@ class SeekersViewController: UITableViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchUser()
+        fetchUsers()
+        
+        let backItem = UIBarButtonItem(title: "Restart", style: .plain, target: self, action: #selector(restartTapped))
+        self.navigationItem.leftBarButtonItem = backItem
     }
     
-    func fetchUser() {
+    @objc func restartTapped() {
+        coordinator?.goToChooseView()
+    }
+    
+    func fetchUsers() {
         reference.observe(.childAdded, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 let player = Player()
