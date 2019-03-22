@@ -17,7 +17,6 @@ class ViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //navigationController?.isToolbarHidden = true
         
         Auth.auth().addStateDidChangeListener() { (auth, user) in
             if let user = user {

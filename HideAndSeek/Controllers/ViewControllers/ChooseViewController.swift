@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ChooseViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
@@ -15,6 +16,18 @@ class ChooseViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let backItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(logoutTapped))
+        self.navigationItem.leftBarButtonItem = backItem
+    }
+    
+    @objc func logoutTapped() {
+        coordinator?.start()
+        do {
+            try Auth.auth().signOut()
+            self.dismiss(animated: true, completion: nil)
+        } catch let err {
+            print(err)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
