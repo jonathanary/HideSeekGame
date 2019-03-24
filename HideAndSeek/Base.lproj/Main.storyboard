@@ -233,11 +233,11 @@
                         <outlet property="codeLabelToSafe" destination="gRu-MG-4cJ" id="NAU-J6-r47"/>
                         <outlet property="codeTextField" destination="sVm-MS-rj9" id="Swu-6I-g4O"/>
                         <outlet property="instructionsLabel" destination="xfs-hX-o30" id="C02-CY-uAo"/>
-                        <outlet property="saveConstraintToTextField" destination="60f-Od-err" id="LPG-HZ-nle"/>
+                        <outlet property="saveButtonToTextFieldConstraint" destination="60f-Od-err" id="LPG-HZ-nle"/>
                         <outlet property="saveLabel" destination="Coc-tx-8YO" id="EEl-Rx-esB"/>
-                        <outlet property="stackToSafeConstraint" destination="Zdl-XN-pQf" id="8c9-M0-sKu"/>
+                        <outlet property="stackToSafeAreaConstraint" destination="Zdl-XN-pQf" id="8c9-M0-sKu"/>
+                        <outlet property="startButtonToTextFieldConstraint" destination="L8c-a2-1gV" id="jSV-HP-nas"/>
                         <outlet property="startGameLabel" destination="hVL-0m-dzH" id="YfY-uT-o55"/>
-                        <outlet property="startToTextFieldConstraint" destination="L8c-a2-1gV" id="jSV-HP-nas"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nrl-9k-snF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -319,8 +319,8 @@
                     <connections>
                         <outlet property="codeTextField" destination="8Th-V2-c67" id="rRK-0e-WhO"/>
                         <outlet property="instructionsLabel" destination="y3x-Rg-bMP" id="3pc-RZ-ZU3"/>
-                        <outlet property="mainLabelConstraint" destination="KAf-4C-LWI" id="DSU-mo-YkY"/>
-                        <outlet property="saveToMainLabelConstraint" destination="UUe-Tc-ShJ" id="hF9-oF-aS0"/>
+                        <outlet property="instructionsLabelConstraint" destination="KAf-4C-LWI" id="DSU-mo-YkY"/>
+                        <outlet property="joinToInstructionsLabelConstraint" destination="UUe-Tc-ShJ" id="hF9-oF-aS0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uuB-7I-HJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

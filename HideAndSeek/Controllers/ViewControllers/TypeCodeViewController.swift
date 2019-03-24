@@ -16,8 +16,8 @@ class TypeCodeViewController: UIViewController, Storyboarded {
     var userReference = GameDatabase.userRefByName
     let username = GameDatabase.userName
     
-    @IBOutlet var mainLabelConstraint: NSLayoutConstraint!
-    @IBOutlet var saveToMainLabelConstraint: NSLayoutConstraint!
+    @IBOutlet var instructionsLabelConstraint: NSLayoutConstraint!
+    @IBOutlet var joinToInstructionsLabelConstraint: NSLayoutConstraint!
     @IBOutlet var instructionsLabel: UILabel!
     @IBOutlet weak var codeTextField: UITextField!
     
@@ -49,8 +49,8 @@ class TypeCodeViewController: UIViewController, Storyboarded {
                     
                 } else {
                     self.instructionsLabel.shadowColor = nil
-                    self.instructionsLabel.font = self.instructionsLabel.font.withSize(16)
-                    self.instructionsLabel.textColor = .orange
+                    self.instructionsLabel.font = self.instructionsLabel.font.withSize(20)
+                    self.instructionsLabel.textColor = .red
                     self.instructionsLabel.text = "That's not correct, please ask again!"
                 }
             }
@@ -58,8 +58,8 @@ class TypeCodeViewController: UIViewController, Storyboarded {
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
-        mainLabelConstraint.constant = 1
-        saveToMainLabelConstraint.constant = 1
+        instructionsLabelConstraint.constant = 1
+        joinToInstructionsLabelConstraint.constant = 1
         
         UIView.animate(withDuration: 0.8) {
             self.view.layoutIfNeeded()
@@ -67,7 +67,7 @@ class TypeCodeViewController: UIViewController, Storyboarded {
     }
     
     @objc func keyboardWillResign(_ notification: Notification) {
-        mainLabelConstraint.constant = 40
+        instructionsLabelConstraint.constant = 40
         UIView.animate(withDuration: 0.8) {
             self.view.layoutIfNeeded()
         }

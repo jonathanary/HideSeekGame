@@ -32,6 +32,6 @@ extension GameDatabase {
         GameDatabase.gameReference.child("code").setValue(code)
     }
     static var timerReference = GameDatabase.gameReference.child("Timer")
-    static var newCode = ""
+    //static var newCode = ""
     static var userRefByName = GameDatabase.gameReference.child(GameDatabase.userName!)
 }

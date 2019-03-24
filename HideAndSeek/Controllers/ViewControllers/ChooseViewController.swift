@@ -35,7 +35,7 @@ class ChooseViewController: UIViewController, Storyboarded {
     }
 
     @IBAction func imASeekerButtonTapped(_ sender: Any) {
-        coordinator?.goToCodeView()
+        coordinator?.goToInviteView()
     }
     
     @IBAction func imAHiderTapped(_ sender: Any) {

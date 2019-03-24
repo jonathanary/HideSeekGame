@@ -21,9 +21,9 @@ class InvitePlayersViewController: UIViewController, Storyboarded {
     @IBOutlet weak var startGameLabel: UIButton!
     
     @IBOutlet var codeLabelToSafe: NSLayoutConstraint!
-    @IBOutlet var stackToSafeConstraint: NSLayoutConstraint!
-    @IBOutlet var saveConstraintToTextField: NSLayoutConstraint!
-    @IBOutlet var startToTextFieldConstraint: NSLayoutConstraint!
+    @IBOutlet var stackToSafeAreaConstraint: NSLayoutConstraint!
+    @IBOutlet var saveButtonToTextFieldConstraint: NSLayoutConstraint!
+    @IBOutlet var startButtonToTextFieldConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,9 +67,9 @@ class InvitePlayersViewController: UIViewController, Storyboarded {
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
-        saveConstraintToTextField.constant = 1
-        startToTextFieldConstraint.constant = 24
-        stackToSafeConstraint.constant = 1
+        saveButtonToTextFieldConstraint.constant = 1
+        startButtonToTextFieldConstraint.constant = 24
+        stackToSafeAreaConstraint.constant = 1
         codeLabelToSafe.constant = 40
         
         UIView.animate(withDuration: 0.8) {
@@ -78,7 +78,7 @@ class InvitePlayersViewController: UIViewController, Storyboarded {
     }
     
     @objc func keyboardWillResign(_ notification: Notification) {
-        saveConstraintToTextField.constant = 65
+        saveButtonToTextFieldConstraint.constant = 65
         UIView.animate(withDuration: 0.8) {
             self.view.layoutIfNeeded()
         }

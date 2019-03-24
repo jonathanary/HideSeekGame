@@ -29,7 +29,7 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func goToCodeView() {
+    func goToInviteView() {
         isHider = false
         let vc = InvitePlayersViewController.instantiate()
         vc.coordinator = self

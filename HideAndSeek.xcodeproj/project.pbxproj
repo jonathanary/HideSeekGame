@@ -80,7 +80,6 @@
 				AB22AD6922370C6B001676E7 /* segoe-ui-bold.ttf */,
 				ABC304FA22132B1E008F97FB /* CodeTrimmers.swift */,
 				AB059A8222258FCA0054390E /* BackgroundColorProvider.swift */,
-				ABC304F82211854D008F97FB /* GameDate.swift */,
 				ABD000B722086A390022AA41 /* Assets.xcassets */,
 				ABD000C222086D1B0022AA41 /* GoogleService-Info.plist */,
 			);
@@ -116,6 +115,7 @@
 				ABB1ED962208CCC200C5BE0E /* Coordinator.swift */,
 				ABB1ED982208CD5A00C5BE0E /* Storyboarded.swift */,
 				AB3E57F6220CC51A002C3C4A /* Player.swift */,
+				ABC304F82211854D008F97FB /* GameDate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
