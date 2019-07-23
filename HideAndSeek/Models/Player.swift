@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import MapKit
-import FirebaseDatabase
 
 class Player: NSObject {
     var name: String?

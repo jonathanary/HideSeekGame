@@ -17,8 +17,6 @@ class GameDate {
         return dateFormatter.string(from: date)
     }
     
-    private init() {}
-    
     class func shared() -> String {
         return formattedDate()
     }
