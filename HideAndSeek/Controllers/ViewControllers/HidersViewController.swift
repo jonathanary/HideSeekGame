@@ -13,12 +13,12 @@ import FirebaseDatabase
 
 class HidersViewController: UIViewController, Storyboarded, CBPeripheralManagerDelegate {
     weak var coordinator: MainCoordinator?
-    var reference = GameDatabase.gameReference
-    let username = GameDatabase.userName
-    var beaconRegion: CLBeaconRegion!
-    var beaconPeripheralData: NSDictionary!
-    var peripheralManager: CBPeripheralManager!
-    var locationManager: CLLocationManager!
+    fileprivate let reference = GameDatabase.gameReference
+    fileprivate let username = GameDatabase.userName
+    fileprivate var beaconRegion: CLBeaconRegion!
+    fileprivate var beaconPeripheralData: NSDictionary!
+    fileprivate var peripheralManager: CBPeripheralManager!
+    fileprivate var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class HidersViewController: UIViewController, Storyboarded, CBPeripheralManagerD
     }
     
     @objc func restartTapped() {
-        coordinator?.goToChooseView()
+        coordinator?.start()
     }
     
     func initBeaconRegion() {

@@ -20,6 +20,10 @@ class CatchHiderViewController: UIViewController, Storyboarded, CLLocationManage
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+    
+    func setup() {
         locationManager = CLLocationManager.init()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -35,7 +39,6 @@ class CatchHiderViewController: UIViewController, Storyboarded, CLLocationManage
     
     func getBeaconRegion() -> CLBeaconRegion {
         let beaconRegion = CLBeaconRegion.init(proximityUUID: UUID.init(uuidString: "3187820A-0780-49E7-8F89-855B433BE32F")!, major: CodeTrimmers.setMajor(with: hider), identifier: self.hider)
-
         return beaconRegion
     }
     
@@ -64,6 +67,8 @@ class CatchHiderViewController: UIViewController, Storyboarded, CLLocationManage
             self.hidersColorOutlet.alpha = 0.3
             self.messageLabel.textColor = .gray
             self.messageLabel.text = "\(hider) is in range!"
+        @unknown default:
+            fatalError()
         }
     }
 }

@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 class InvitePlayersViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
-    var reference = GameDatabase.gameReference
+    fileprivate let reference = GameDatabase.gameReference
     
     @IBOutlet weak var codeTextField: UITextField!
     @IBOutlet weak var codeLabel: UILabel!
@@ -27,14 +27,17 @@ class InvitePlayersViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+
+    func setupUI() {
         reference.removeValue()
         codeLabel.isHidden = true
         startGameLabel.isHidden = true
-        
         NotificationCenter.default.addObserver(self, selector: #selector(InvitePlayersViewController.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(InvitePlayersViewController.keyboardWillResign(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
+    
     @IBAction func saveTapped(_ sender: Any) {
         let code = codeTextField.text
     

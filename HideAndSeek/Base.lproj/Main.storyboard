@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -157,7 +158,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Coc-tx-8YO">
-                                <rect key="frame" x="361" y="193" width="90" height="40"/>
+                                <rect key="frame" x="361" y="206.33333333333334" width="90" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="Nst-27-dsr"/>
                                     <constraint firstAttribute="height" constant="40" id="Y2Y-OI-gQz"/>
@@ -168,7 +169,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVL-0m-dzH">
-                                <rect key="frame" x="361" y="193" width="90" height="40"/>
+                                <rect key="frame" x="361" y="206.33333333333334" width="90" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="OZf-rP-eaP"/>
                                     <constraint firstAttribute="height" constant="40" id="Vqj-sV-zE7"/>
@@ -178,11 +179,11 @@
                                     <action selector="startGameTapped:" destination="juE-uR-F7w" eventType="touchUpInside" id="6rM-Ez-GxC"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eYx-a6-Qr2">
-                                <rect key="frame" x="152.33333333333334" y="40" width="507.33333333333326" height="88"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eYx-a6-Qr2">
+                                <rect key="frame" x="152.33333333333334" y="39.999999999999993" width="507.33333333333326" height="101.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type a code so others can join!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfs-hX-o30">
-                                        <rect key="frame" x="0.0" y="0.0" width="507.33333333333331" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="507.33333333333331" height="63.333333333333336"/>
                                         <fontDescription key="fontDescription" name="SegoeUI-Bold" family="Segoe UI" pointSize="35"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -190,7 +191,7 @@
                                         <size key="shadowOffset" width="1" height="2"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="write your code here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sVm-MS-rj9">
-                                        <rect key="frame" x="153.66666666666666" y="58" width="199.99999999999997" height="30"/>
+                                        <rect key="frame" x="153.66666666666666" y="71.333333333333329" width="199.99999999999997" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="4Wk-Sp-9fS"/>
                                         </constraints>
@@ -255,11 +256,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HideSeek" translatesAutoresizingMaskIntoConstraints="NO" id="8F5-hP-AMv">
                                 <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MHg-V1-OLJ">
-                                <rect key="frame" x="219.33333333333334" y="59" width="373.66666666666663" height="88"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MHg-V1-OLJ">
+                                <rect key="frame" x="219.33333333333334" y="58.999999999999993" width="373.66666666666663" height="101.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There is a Code. Ask! :)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3x-Rg-bMP">
-                                        <rect key="frame" x="0.0" y="0.0" width="373.66666666666669" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="373.66666666666669" height="63.333333333333336"/>
                                         <fontDescription key="fontDescription" name="SegoeUI-Bold" family="Segoe UI" pointSize="35"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -267,7 +268,7 @@
                                         <size key="shadowOffset" width="1" height="2"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="write the code here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Th-V2-c67">
-                                        <rect key="frame" x="86.666666666666657" y="58" width="199.99999999999997" height="30"/>
+                                        <rect key="frame" x="86.666666666666657" y="71.333333333333343" width="199.99999999999997" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Z8x-03-b57"/>
                                         </constraints>
@@ -289,7 +290,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YA-ka-osu">
-                                <rect key="frame" x="361" y="197" width="90" height="40"/>
+                                <rect key="frame" x="361" y="210.33333333333334" width="90" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="0F1-9Q-jsT"/>
                                     <constraint firstAttribute="height" constant="40" id="TLv-Qu-uxT"/>
@@ -339,7 +340,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hiders joined with the code:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3A-8B-J1u">
-                                <rect key="frame" x="60" y="2" width="706" height="36"/>
+                                <rect key="frame" x="60" y="2" width="706" height="52"/>
                                 <fontDescription key="fontDescription" name="SegoeUI-Bold" family="Segoe UI" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -347,7 +348,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSt-NT-JNP">
-                                <rect key="frame" x="64" y="40" width="684" height="32"/>
+                                <rect key="frame" x="64" y="56" width="684" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="GH1-FB-cBv"/>
                                 </constraints>
@@ -355,8 +356,8 @@
                                 <color key="textColor" red="0.99529677629470825" green="0.67817014455795288" blue="0.047558844089508057" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="VAE-pV-IHU">
-                                <rect key="frame" x="255" y="80" width="302" height="215"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VAE-pV-IHU">
+                                <rect key="frame" x="255" y="96" width="302" height="183"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCm-j0-Uu9">
                                         <rect key="frame" x="90" y="0.0" width="122" height="58"/>
@@ -367,7 +368,7 @@
                                         <size key="shadowOffset" width="1" height="2"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ia0-PS-w7A">
-                                        <rect key="frame" x="133.66666666666669" y="82" width="34.666666666666657" height="37"/>
+                                        <rect key="frame" x="133.66666666666669" y="66" width="34.666666666666657" height="37"/>
                                         <fontDescription key="fontDescription" name="SegoeUI-Bold" family="Segoe UI" pointSize="35"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -378,7 +379,7 @@
                                         </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjg-aW-Uv4">
-                                        <rect key="frame" x="0.0" y="143" width="302" height="72"/>
+                                        <rect key="frame" x="0.0" y="111" width="302" height="72"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="72" id="11g-n4-I2I"/>
                                             <constraint firstAttribute="width" constant="302" id="MG5-1g-aIt"/>
@@ -469,9 +470,9 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Hider is too far, or closed the app" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrb-JE-oOr">
-                                <rect key="frame" x="60" y="105" width="692" height="165"/>
+                                <rect key="frame" x="60" y="162.66666666666666" width="692" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="165" id="ujd-Pm-BvK"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="165" id="ujd-Pm-BvK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SegoeUI-Bold" family="Segoe UI" pointSize="35"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -511,9 +512,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep this page open so the Seeker can find you!   (Oh, and...shhh!)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mD-rM-fI4">
-                                <rect key="frame" x="60" y="31.666666666666657" width="692" height="312"/>
+                                <rect key="frame" x="60" y="92" width="692" height="191"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="312" id="AVQ-YK-bKI"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="312" id="AVQ-YK-bKI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SegoeUI-Bold" family="Segoe UI" pointSize="35"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

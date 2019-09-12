@@ -11,8 +11,8 @@ import FirebaseDatabase
 
 class TimerViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
-    var reference = GameDatabase.gameReference
-    var timerFireBase = GameDatabase.timerReference
+    fileprivate let reference = GameDatabase.gameReference
+    fileprivate let timerFireBase = GameDatabase.timerReference
     var players = [Player]()
     var isHider = false
     
@@ -55,8 +55,11 @@ class TimerViewController: UIViewController, Storyboarded {
         }
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        navigationController?.setNavigationBarHidden(true, animated: true)
+//    }
+    
     @IBAction func startTimerTapped(_ sender: Any) {
-        //self.isHider = false
         timerLabel.text = "Wait for it!"
         startTimeLabel.isHidden = true
         var gameTimer: Timer!

@@ -11,11 +11,11 @@ import CoreLocation
 
 class SeekersViewController: UITableViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
-    var locationManager: CLLocationManager!
+    fileprivate var locationManager: CLLocationManager!
     var isHider = false
     var selectedHider: String!
-    var reference = GameDatabase.gameReference
-    let userReference = GameDatabase.userRefByName
+    fileprivate let reference = GameDatabase.gameReference
+    fileprivate let userReference = GameDatabase.userRefByName
     var hidersArray = [Player]()
 
     override func viewDidLoad() {
@@ -32,10 +32,12 @@ class SeekersViewController: UITableViewController, Storyboarded {
     
     func fetchUsers() {
         reference.observe(.childAdded, with: { (snapshot) in
+            
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 let player = Player()
                 player.name = dictionary["name"] as? String
                 self.hidersArray.append(player)
+                
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }

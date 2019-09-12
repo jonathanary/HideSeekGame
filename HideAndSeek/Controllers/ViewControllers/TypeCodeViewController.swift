@@ -12,9 +12,9 @@ import FirebaseAuth
 
 class TypeCodeViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
-    var reference = GameDatabase.gameReference
-    var userReference = GameDatabase.userRefByName
-    let username = GameDatabase.userName
+    fileprivate let reference = GameDatabase.gameReference
+    fileprivate let userReference = GameDatabase.userRefByName
+    fileprivate let username = GameDatabase.userName
     
     @IBOutlet var instructionsLabelConstraint: NSLayoutConstraint!
     @IBOutlet var joinToInstructionsLabelConstraint: NSLayoutConstraint!
@@ -22,12 +22,15 @@ class TypeCodeViewController: UIViewController, Storyboarded {
     @IBOutlet weak var codeTextField: UITextField!
     
     override func viewDidLoad() {
-        //instructionsLabel.isHidden = true
         super.viewDidLoad()
         
+        setupKeyboard()
+    }
+    
+    func setupKeyboard() {
         NotificationCenter.default.addObserver(self, selector: #selector(TypeCodeViewController.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(TypeCodeViewController.keyboardWillResign(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }  
+    }
     
     @IBAction func joinGameTapped(_ sender: Any) {
         let code = codeTextField.text

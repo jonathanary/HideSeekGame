@@ -22,9 +22,11 @@ class ChooseViewController: UIViewController, Storyboarded {
     
     @objc func logoutTapped() {
         coordinator?.start()
+        
         do {
             try Auth.auth().signOut()
             self.dismiss(animated: true, completion: nil)
+            
         } catch let err {
             print(err)
         }

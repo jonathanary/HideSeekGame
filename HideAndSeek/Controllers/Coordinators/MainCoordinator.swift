@@ -9,7 +9,6 @@
 import UIKit
 
 class MainCoordinator: Coordinator {
-    //var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     var isHider = true
     
@@ -18,6 +17,7 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
+        navigationController.viewControllers.removeAll()
         let vc = ViewController.instantiate()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
