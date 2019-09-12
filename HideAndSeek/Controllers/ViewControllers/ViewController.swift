@@ -45,6 +45,7 @@ class ViewController: UIViewController, Storyboarded {
     
     @IBAction func loginTapped(_ sender: Any) {
         let authUi = FUIAuth.defaultAuthUI()
+        assert(authUi != nil, "There should be a connection with the Firebase server.")
         guard authUi != nil else { return }
         authUi?.delegate = self
         let authViewController = authUi!.authViewController()

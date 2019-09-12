@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         coordinator?.start()
         window = UIWindow(frame: UIScreen.main.bounds)
+        assert(window != nil, "There must be a window.")
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
         FirebaseApp.configure()
