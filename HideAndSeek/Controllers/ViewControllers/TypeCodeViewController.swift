@@ -23,7 +23,7 @@ class TypeCodeViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         setupKeyboard()
     }
     

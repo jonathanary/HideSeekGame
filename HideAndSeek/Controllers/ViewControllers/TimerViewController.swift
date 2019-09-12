@@ -23,10 +23,18 @@ class TimerViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        navigationController?.setNavigationBarHidden(true, animated: true)
+//    }
+    
+    func setup() {
         self.playersNameListLabel.text = ""
         
         reference.observe(.childAdded) { (snapshot) in
-        
+            
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 self.players = [Player]()
                 let player = Player()
@@ -38,7 +46,7 @@ class TimerViewController: UIViewController, Storyboarded {
                 }
             }
         }
-
+        
         if isHider {
             timerLabel.text = "Run and Hide!"
             startTimeLabel.isHidden = true
@@ -54,10 +62,6 @@ class TimerViewController: UIViewController, Storyboarded {
             }
         }
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        navigationController?.setNavigationBarHidden(true, animated: true)
-//    }
     
     @IBAction func startTimerTapped(_ sender: Any) {
         timerLabel.text = "Wait for it!"

@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let navController = UINavigationController()
         coordinator = MainCoordinator(navigationController: navController)
+        assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         coordinator?.start()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navController

@@ -22,16 +22,20 @@ class HidersViewController: UIViewController, Storyboarded, CBPeripheralManagerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initBeaconRegion()
-        beaconPeripheralData = beaconRegion.peripheralData(withMeasuredPower: nil)
-        peripheralManager = CBPeripheralManager.init(delegate: self, queue: nil)
-        let backItem = UIBarButtonItem(title: "Restart", style: .plain, target: self, action: #selector(restartTapped))
-        self.navigationItem.leftBarButtonItem = backItem
+        assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         coordinator?.hidersViewDidDisappear(self)
+    }
+    
+    func setup() {
+        initBeaconRegion()
+        beaconPeripheralData = beaconRegion.peripheralData(withMeasuredPower: nil)
+        peripheralManager = CBPeripheralManager.init(delegate: self, queue: nil)
+        let backItem = UIBarButtonItem(title: "Restart", style: .plain, target: self, action: #selector(restartTapped))
+        self.navigationItem.leftBarButtonItem = backItem
     }
     
     @objc func restartTapped() {

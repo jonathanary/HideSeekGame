@@ -20,6 +20,7 @@ class SeekersViewController: UITableViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         fetchUsers()
         
         let backItem = UIBarButtonItem(title: "Restart", style: .plain, target: self, action: #selector(restartTapped))

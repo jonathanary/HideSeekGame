@@ -20,6 +20,7 @@ class CatchHiderViewController: UIViewController, Storyboarded, CLLocationManage
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         setup()
     }
     

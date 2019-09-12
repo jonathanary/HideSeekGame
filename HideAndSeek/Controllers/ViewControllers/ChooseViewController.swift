@@ -16,6 +16,15 @@ class ChooseViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
+        setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    func setupUI() {
         let backItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(logoutTapped))
         self.navigationItem.leftBarButtonItem = backItem
     }
@@ -30,10 +39,6 @@ class ChooseViewController: UIViewController, Storyboarded {
         } catch let err {
             print(err)
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
     @IBAction func imASeekerButtonTapped(_ sender: Any) {

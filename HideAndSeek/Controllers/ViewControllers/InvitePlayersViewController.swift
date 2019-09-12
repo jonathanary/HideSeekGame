@@ -27,10 +27,11 @@ class InvitePlayersViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
+        setup()
     }
 
-    func setupUI() {
+    func setup() {
         reference.removeValue()
         codeLabel.isHidden = true
         startGameLabel.isHidden = true

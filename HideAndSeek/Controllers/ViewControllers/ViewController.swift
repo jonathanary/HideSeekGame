@@ -18,6 +18,7 @@ class ViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         setup()
     }
     
@@ -53,6 +54,7 @@ class ViewController: UIViewController, Storyboarded {
 
 extension ViewController: FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+        
         guard error == nil else { return }
         
         if !self.didGoToNextView {
