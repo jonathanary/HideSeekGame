@@ -208,16 +208,6 @@ static NSString *const kFirebaseAuthUIFrameworkMarker = @"FirebaseUI-iOS";
   }];
 }
 
-/** @fn handleAccountLinkingForEmail:newCredential:presentingViewController:signInResult
-    @brief Handles the account linking case after a user tries to sign-in which has a credential
-        with an email which is already used by a different account.
-    @param email The email address used by an existing account and and also the credential used in
-        the sign-in attempt.
-    @param newCredential The credential used in the lastest sign-in attempt.
-    @param presentingViewController The view controller used to present the UI.
-    @param signInResult block which takes the result of this method as a parameter; a nullable
-        AuthResult indicating success or a nullable Error indicating failure.
- */
 - (void)handleAccountLinkingForEmail:(NSString *)email
                        newCredential:(FIRAuthCredential *)newCredential
             presentingViewController:(UIViewController *)presentingViewController
