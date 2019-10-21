@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol Coordinator {
+    var navigationController: UINavigationController {get set}
+}
+
+/// The main coordinator of the app.
 class MainCoordinator: Coordinator {
     var navigationController: UINavigationController
-    var isHider = true
+    var isHiding = true
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+		start()
     }
 
     func start() {
@@ -30,14 +36,14 @@ class MainCoordinator: Coordinator {
     }
 
     func goToInviteView() {
-        isHider = false
+        isHiding = false
         let viewController = InvitePlayersViewController.instantiate()
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }
 
     func goToTypeCodeView() {
-        isHider = true
+        isHiding = true
         let viewController = TypeCodeViewController.instantiate()
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
@@ -58,7 +64,7 @@ class MainCoordinator: Coordinator {
     }
 
     func goToHidersView() {
-        if isHider {
+        if isHiding {
             let viewController = HidersViewController.instantiate()
             viewController.coordinator = self
             navigationController.pushViewController(viewController, animated: true)

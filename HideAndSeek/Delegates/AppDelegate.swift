@@ -22,9 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController()
         coordinator = MainCoordinator(navigationController: navigationController)
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
-        coordinator?.start()
         window = UIWindow(frame: UIScreen.main.bounds)
-        assert(window != nil, "There must be a window.")
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         FirebaseApp.configure()

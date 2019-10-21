@@ -17,7 +17,6 @@
 		AB3E57F5220BF153002C3C4A /* GameDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57F4220BF153002C3C4A /* GameDatabase.swift */; };
 		AB3E57F7220CC51A002C3C4A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57F6220CC51A002C3C4A /* Player.swift */; };
 		AB3E57F9220D74B2002C3C4A /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E57F8220D74B2002C3C4A /* TimerViewController.swift */; };
-		ABB1ED972208CCC200C5BE0E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1ED962208CCC200C5BE0E /* Coordinator.swift */; };
 		ABB1ED992208CD5A00C5BE0E /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1ED982208CD5A00C5BE0E /* Storyboarded.swift */; };
 		ABB1ED9B2208D1E900C5BE0E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1ED9A2208D1E900C5BE0E /* MainCoordinator.swift */; };
 		ABC304D422106CDF008F97FB /* HidersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC304D322106CDF008F97FB /* HidersViewController.swift */; };
@@ -44,7 +43,6 @@
 		AB3E57F4220BF153002C3C4A /* GameDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDatabase.swift; sourceTree = "<group>"; };
 		AB3E57F6220CC51A002C3C4A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		AB3E57F8220D74B2002C3C4A /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
-		ABB1ED962208CCC200C5BE0E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		ABB1ED982208CD5A00C5BE0E /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		ABB1ED9A2208D1E900C5BE0E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		ABC304D322106CDF008F97FB /* HidersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HidersViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 		AB9DFF652228199F00E6625D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				ABB1ED962208CCC200C5BE0E /* Coordinator.swift */,
 				ABB1ED982208CD5A00C5BE0E /* Storyboarded.swift */,
 				AB3E57F6220CC51A002C3C4A /* Player.swift */,
 				ABC304F82211854D008F97FB /* GameDate.swift */,
@@ -368,7 +365,6 @@
 				ABD000B122086A360022AA41 /* AppDelegate.swift in Sources */,
 				AB059A8322258FCA0054390E /* BackgroundColorProvider.swift in Sources */,
 				AB3E57F7220CC51A002C3C4A /* Player.swift in Sources */,
-				ABB1ED972208CCC200C5BE0E /* Coordinator.swift in Sources */,
 				AB3E57F5220BF153002C3C4A /* GameDatabase.swift in Sources */,
 				ABC304FB22132B1E008F97FB /* CodeTrimmers.swift in Sources */,
 				ABB1ED9B2208D1E900C5BE0E /* MainCoordinator.swift in Sources */,

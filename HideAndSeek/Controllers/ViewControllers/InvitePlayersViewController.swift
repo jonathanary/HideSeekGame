@@ -19,7 +19,6 @@ class InvitePlayersViewController: UIViewController, Storyboarded {
     @IBOutlet weak var saveLabel: UIButton!
     @IBOutlet weak var instructionsLabel: UILabel!
     @IBOutlet weak var startGameLabel: UIButton!
-
     @IBOutlet var codeLabelToSafe: NSLayoutConstraint!
     @IBOutlet var stackToSafeAreaConstraint: NSLayoutConstraint!
     @IBOutlet var saveButtonToTextFieldConstraint: NSLayoutConstraint!
