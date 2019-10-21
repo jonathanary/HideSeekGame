@@ -15,41 +15,45 @@ class TypeCodeViewController: UIViewController, Storyboarded {
     fileprivate let reference = GameDatabase.gameReference
     fileprivate let userReference = GameDatabase.userRefByName
     fileprivate let username = GameDatabase.userName
-    
+
     @IBOutlet var instructionsLabelConstraint: NSLayoutConstraint!
     @IBOutlet var joinToInstructionsLabelConstraint: NSLayoutConstraint!
     @IBOutlet var instructionsLabel: UILabel!
     @IBOutlet weak var codeTextField: UITextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         setupKeyboard()
     }
-    
+
     func setupKeyboard() {
-        NotificationCenter.default.addObserver(self, selector: #selector(TypeCodeViewController.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(TypeCodeViewController.keyboardWillResign(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(
+			self,
+			selector: #selector(TypeCodeViewController.keyboardWillShow(_:)),
+			name: UIResponder.keyboardWillShowNotification,
+			object: nil)
+        NotificationCenter.default.addObserver(
+			self,
+			selector: #selector(TypeCodeViewController.keyboardWillResign(_:)),
+			name: UIResponder.keyboardWillHideNotification,
+			object: nil)
     }
-    
+
     @IBAction func joinGameTapped(_ sender: Any) {
         let code = codeTextField.text
         if code == "" {
-            //instructionsLabel.isHidden = false
             instructionsLabel.shadowColor = nil
             instructionsLabel.font = instructionsLabel.font.withSize(16)
             instructionsLabel.textColor = .orange
             instructionsLabel.text = "Please ask for the code from the Seeker, to play!"
-            
+
         } else {
-    
             reference.child("code").observeSingleEvent(of: .value) { (snapshot) in
                 let codeFromDB = snapshot.value as? String
-                
                 if codeFromDB == code! {
                     self.userReference.setValue(["name": self.username!])
                     self.coordinator?.goToTimerView(asHider: true)
-                    
                 } else {
                     self.instructionsLabel.shadowColor = nil
                     self.instructionsLabel.font = self.instructionsLabel.font.withSize(20)
@@ -59,16 +63,14 @@ class TypeCodeViewController: UIViewController, Storyboarded {
             }
         }
     }
-    
     @objc func keyboardWillShow(_ notification: Notification) {
         instructionsLabelConstraint.constant = 1
         joinToInstructionsLabelConstraint.constant = 1
-        
+
         UIView.animate(withDuration: 0.8) {
             self.view.layoutIfNeeded()
         }
     }
-    
     @objc func keyboardWillResign(_ notification: Notification) {
         instructionsLabelConstraint.constant = 40
         UIView.animate(withDuration: 0.8) {

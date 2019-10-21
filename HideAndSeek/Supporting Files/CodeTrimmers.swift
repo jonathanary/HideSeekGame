@@ -9,12 +9,10 @@
 import Foundation
 
 extension Character {
-    var asciiValue: Int {
-        get {
-            let s = String(self).unicodeScalars
-            return Int(s[s.startIndex].value)
-        }
-    }
+	var asciiValue: Int {
+		let unicodeString = String(self).unicodeScalars
+		return Int(unicodeString[unicodeString.startIndex].value)
+	}
 }
 
 struct CodeTrimmers {
@@ -25,17 +23,16 @@ struct CodeTrimmers {
         }
         return trimmedStr
     }
-    
+
     static func setMajor(with username: String) -> UInt16 {
-        var n = 8549
-        for i in username {
-            let numberFromUsername = i.asciiValue
-            n -= numberFromUsername
-            if n < 0 {
-                n += numberFromUsername
+        var number = 8549
+        for character in username {
+            let numberFromUsername = character.asciiValue
+            number -= numberFromUsername
+            if number < 0 {
+                number += numberFromUsername
             }
         }
-        return UInt16(n)
+        return UInt16(number)
     }
 }
-

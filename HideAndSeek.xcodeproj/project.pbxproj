@@ -208,6 +208,7 @@
 				ABD000AB22086A360022AA41 /* Resources */,
 				413397C6B45B3962C0B18227 /* [CP] Embed Pods Frameworks */,
 				D5379F0E036294E9D67EF753 /* [CP] Copy Pods Resources */,
+				AB3E61AC235D979200376118 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -314,6 +315,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HideAndSeek/Pods-HideAndSeek-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		AB3E61AC235D979200376118 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
 		};
 		D5379F0E036294E9D67EF753 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

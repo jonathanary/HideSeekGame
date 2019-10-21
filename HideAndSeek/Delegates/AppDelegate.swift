@@ -15,21 +15,19 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var coordinator: MainCoordinator?
     var window: UIWindow?
-    let center = UNUserNotificationCenter.current()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        let navController = UINavigationController()
-        coordinator = MainCoordinator(navigationController: navController)
+	func application(
+		_ application: UIApplication,
+		didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let navigationController = UINavigationController()
+        coordinator = MainCoordinator(navigationController: navigationController)
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         coordinator?.start()
         window = UIWindow(frame: UIScreen.main.bounds)
         assert(window != nil, "There must be a window.")
-        window?.rootViewController = navController
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         FirebaseApp.configure()
         return true
     }
-
 }
-

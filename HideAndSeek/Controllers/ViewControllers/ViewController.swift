@@ -15,20 +15,20 @@ class ViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
     @IBOutlet var loginLabel: UIButton!
     var didGoToNextView = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         setup()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    
+
     func setup() {
-        Auth.auth().addStateDidChangeListener() { [weak self](auth, user) in
-            
+		Auth.auth().addStateDidChangeListener { [weak self] _, user in
+
             guard let strongSelf = self else { return }
             if let user = user {
                 print("User is signed in with uid:", user.uid)
@@ -42,7 +42,7 @@ class ViewController: UIViewController, Storyboarded {
             }
         }
     }
-    
+
     @IBAction func loginTapped(_ sender: Any) {
         let authUi = FUIAuth.defaultAuthUI()
         assert(authUi != nil, "There should be a connection with the Firebase server.")
@@ -55,13 +55,13 @@ class ViewController: UIViewController, Storyboarded {
 
 extension ViewController: FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
-        
+
         guard error == nil else { return }
-        
+
         if !self.didGoToNextView {
             coordinator?.goToChooseView()
             self.didGoToNextView = true
-            
+
         } else {
             return
         }

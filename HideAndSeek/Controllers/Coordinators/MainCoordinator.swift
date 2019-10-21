@@ -11,72 +11,71 @@ import UIKit
 class MainCoordinator: Coordinator {
     var navigationController: UINavigationController
     var isHider = true
-    
+
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-    
+
     func start() {
         navigationController.viewControllers.removeAll()
-        let vc = ViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: false)
+        let viewController = ViewController.instantiate()
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: false)
     }
-    
+
     func goToChooseView() {
-        let vc = ChooseViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        let viewController = ChooseViewController.instantiate()
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
     }
-    
+
     func goToInviteView() {
         isHider = false
-        let vc = InvitePlayersViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        let viewController = InvitePlayersViewController.instantiate()
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
     }
-    
+
     func goToTypeCodeView() {
         isHider = true
-        let vc = TypeCodeViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        let viewController = TypeCodeViewController.instantiate()
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
     }
-    
+
     func goToTimerView(asHider: Bool) {
-        let vc = TimerViewController.instantiate()
-        vc.isHider = asHider
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        let viewController = TimerViewController.instantiate()
+        viewController.isHider = asHider
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
     }
-    
+
     func goToSeekersView(asHider: Bool) {
-        let vc = SeekersViewController.instantiate()
-        vc.coordinator = self
-        vc.isHider = asHider
-        navigationController.pushViewController(vc, animated: true)
+        let viewController = SeekersViewController.instantiate()
+        viewController.coordinator = self
+        viewController.isHider = asHider
+        navigationController.pushViewController(viewController, animated: true)
     }
-    
+
     func goToHidersView() {
         if isHider {
-            let vc = HidersViewController.instantiate()
-            vc.coordinator = self
-            navigationController.pushViewController(vc, animated: true)
+            let viewController = HidersViewController.instantiate()
+            viewController.coordinator = self
+            navigationController.pushViewController(viewController, animated: true)
         }
     }
-    
-    func hidersViewDidDisappear(_ viewController: UIViewController) {
-        for (index, controller) in navigationController.viewControllers.enumerated() {
-            if controller === viewController {
-                navigationController.viewControllers.remove(at: index)
-            }
-        }
-    }
-    
+
+	func hidersViewDidDisappear(_ viewController: UIViewController) {
+		for (index, controller) in navigationController.viewControllers.enumerated()
+			where controller === viewController {
+			navigationController.viewControllers.remove(at: index)
+		}
+	}
+
     func goToCatchView(with hider: String) {
-        let vc = CatchHiderViewController.instantiate()
-        vc.coordinator = self
-        vc.hider = hider
-        navigationController.pushViewController(vc, animated: true)
+        let viewController = CatchHiderViewController.instantiate()
+        viewController.coordinator = self
+        viewController.hider = hider
+        navigationController.pushViewController(viewController, animated: true)
     }
 }

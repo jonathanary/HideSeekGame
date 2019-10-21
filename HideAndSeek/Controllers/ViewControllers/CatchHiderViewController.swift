@@ -14,16 +14,16 @@ class CatchHiderViewController: UIViewController, Storyboarded, CLLocationManage
     let backgroundColor = BackgoundColorProvider()
     var hider = ""
     var locationManager: CLLocationManager!
-    
+
     @IBOutlet var hidersColorOutlet: UIImageView!
     @IBOutlet var messageLabel: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         setup()
     }
-    
+
     func setup() {
         locationManager = CLLocationManager.init()
         locationManager.delegate = self
@@ -32,25 +32,29 @@ class CatchHiderViewController: UIViewController, Storyboarded, CLLocationManage
         hidersColorOutlet.backgroundColor = backgroundColor.randomColor()
         hidersColorOutlet.alpha = 0
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
         self.hider = ""
     }
-    
+
     func getBeaconRegion() -> CLBeaconRegion {
-        let beaconRegion = CLBeaconRegion.init(proximityUUID: UUID.init(uuidString: "3187820A-0780-49E7-8F89-855B433BE32F")!, major: CodeTrimmers.setMajor(with: hider), identifier: self.hider)
+        let beaconRegion = CLBeaconRegion.init(
+			proximityUUID: UUID.init(
+				uuidString: "3187820A-0780-49E7-8F89-855B433BE32F")!,
+				major: CodeTrimmers.setMajor(with: hider),
+				identifier: self.hider)
         return beaconRegion
     }
-    
+
     func startScanningForBeaconRegion(beaconRegion: CLBeaconRegion) {
         locationManager.startMonitoring(for: beaconRegion)
         locationManager.startRangingBeacons(in: beaconRegion)
     }
-    
+
     // Delegate Methods for tracking beacons and changing the view
     fileprivate func changeViewByProximity(_ beacon: CLBeacon) {
-        
+
         switch beacon.proximity {
         case .unknown:
             self.hidersColorOutlet.alpha = 0
@@ -82,7 +86,7 @@ extension CatchHiderViewController {
                 print(String(describing: beacon.accuracy))
                 changeViewByProximity(beacon)
             }
-            
+
         } else {
             print("no hiders in range")
         }

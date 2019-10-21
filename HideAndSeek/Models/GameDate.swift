@@ -9,15 +9,14 @@
 import Foundation
 
 class GameDate {
-    
-    private static var formattedDate = { ()-> String in
+    private static var formattedDate = { () -> String in
         var date = Date()
         var dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM-dd-yyyy"
         return dateFormatter.string(from: date)
     }
-    
-    class func shared() -> String {
+
+	class func shared() -> String {
         return formattedDate()
     }
 }
