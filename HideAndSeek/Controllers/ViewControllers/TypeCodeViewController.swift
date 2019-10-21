@@ -51,14 +51,15 @@ class TypeCodeViewController: UIViewController, Storyboarded {
         } else {
             reference.child("code").observeSingleEvent(of: .value) { (snapshot) in
                 let codeFromDB = snapshot.value as? String
-                if codeFromDB == code! {
-                    self.userReference.setValue(["name": self.username!])
+				guard let code = code else { return }
+                if codeFromDB == code {
+                    self.userReference.setValue(["name": self.username])
                     self.coordinator?.goToTimerView(asHider: true)
                 } else {
                     self.instructionsLabel.shadowColor = nil
                     self.instructionsLabel.font = self.instructionsLabel.font.withSize(20)
                     self.instructionsLabel.textColor = .red
-                    self.instructionsLabel.text = "That's not correct, please ask again!"
+                    self.instructionsLabel.text = "That code is not correct, please ask again."
                 }
             }
         }

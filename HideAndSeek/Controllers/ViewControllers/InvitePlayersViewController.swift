@@ -69,7 +69,7 @@ class InvitePlayersViewController: UIViewController, Storyboarded {
                 self.saveLabel.isHidden = true
                 self.instructionsLabel.font = self.instructionsLabel.font.withSize(35)
                 self.instructionsLabel.textColor = .white
-                self.instructionsLabel.text = "Tell your code, so others can join!"
+                self.instructionsLabel.text = "Tell your code, so others can join"
                 self.startGameLabel.isHidden = false
             }
         }

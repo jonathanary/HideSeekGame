@@ -36,11 +36,9 @@ class TimerViewController: UIViewController, Storyboarded {
         reference.observe(.childAdded) { (snapshot) in
 
             if let dictionary = snapshot.value as? [String: AnyObject] {
-                self.players = [Player]()
                 let player = Player()
                 player.name = dictionary["name"] as? String
                 self.players.append(player)
-
                 for aPlayer in (self.players) {
                     self.playersNameListLabel.text?.append("\(aPlayer.name ?? "") ")
                 }
@@ -48,7 +46,7 @@ class TimerViewController: UIViewController, Storyboarded {
         }
 
         if isHider {
-            timerLabel.text = "Run and Hide!"
+            timerLabel.text = "Run and Hide ;)"
             startTimeLabel.isHidden = true
 
             timerFireBase.observe(.value) { (snapshot) in
@@ -64,9 +62,9 @@ class TimerViewController: UIViewController, Storyboarded {
     }
 
     @IBAction func startTimerTapped(_ sender: Any) {
-        timerLabel.text = "Wait for it!"
+        timerLabel.text = "Wait for it.."
         startTimeLabel.isHidden = true
-        var gameTimer: Timer!
+        var gameTimer: Timer?
         var runCount = 60
 		gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {_ in
             runCount -= 1
@@ -74,7 +72,7 @@ class TimerViewController: UIViewController, Storyboarded {
             self.timerFireBase.setValue(runCount)
 
             if runCount == 50 {
-                gameTimer.invalidate()
+                gameTimer?.invalidate()
                 self.coordinator?.goToSeekersView(asHider: self.isHider)
                 self.timerFireBase.setValue(60)
             }

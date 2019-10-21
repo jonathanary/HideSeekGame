@@ -15,10 +15,10 @@ class HidersViewController: UIViewController, Storyboarded, CBPeripheralManagerD
     weak var coordinator: MainCoordinator?
     fileprivate let reference = GameDatabase.gameReference
     fileprivate let username = GameDatabase.userName
-    fileprivate var beaconRegion: CLBeaconRegion!
-    fileprivate var beaconPeripheralData: NSDictionary!
-    fileprivate var peripheralManager: CBPeripheralManager!
-    fileprivate var locationManager: CLLocationManager!
+    fileprivate var beaconRegion: CLBeaconRegion?
+    fileprivate var beaconPeripheralData: NSDictionary?
+    fileprivate var peripheralManager: CBPeripheralManager?
+    fileprivate var locationManager: CLLocationManager?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ class HidersViewController: UIViewController, Storyboarded, CBPeripheralManagerD
 
     func setup() {
         initBeaconRegion()
-        beaconPeripheralData = beaconRegion.peripheralData(withMeasuredPower: nil)
+        beaconPeripheralData = beaconRegion?.peripheralData(withMeasuredPower: nil)
         peripheralManager = CBPeripheralManager.init(delegate: self, queue: nil)
         let backItem = UIBarButtonItem(title: "Restart", style: .plain, target: self, action: #selector(restartTapped))
         self.navigationItem.leftBarButtonItem = backItem
@@ -43,20 +43,22 @@ class HidersViewController: UIViewController, Storyboarded, CBPeripheralManagerD
     }
 
     func initBeaconRegion() {
+		guard let username = username else { return }
+		guard let proximityUUID = Player.proximityUUID else { return }
         beaconRegion = CLBeaconRegion.init(
-			proximityUUID: UUID.init(uuidString: "3187820A-0780-49E7-8F89-855B433BE32F")!,
-			major: CodeTrimmers.setMajor(with: username!),
+			proximityUUID: proximityUUID,
+			major: CodeTrimmers.setMajor(with: username),
 			minor: 1,
-			identifier: username!)
+			identifier: username)
     }
 
     // Delegate Methods for the beacons
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         if peripheral.state == .poweredOn {
-            peripheralManager.startAdvertising(beaconPeripheralData as? [String: Any])
+            peripheralManager?.startAdvertising(beaconPeripheralData as? [String: Any])
             print("Beacons are Powered On")
         } else {
-            peripheralManager.stopAdvertising()
+            peripheralManager?.stopAdvertising()
             print("Beacons are Not Powered On, or some other error")
         }
     }

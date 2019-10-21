@@ -6,13 +6,11 @@
 
 import UIKit
 import FirebaseDatabase
-import CoreLocation
 
 class SeekersViewController: UITableViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
-    fileprivate var locationManager: CLLocationManager!
     var isHider = false
-    var selectedHider: String!
+    var selectedHider: String?
     fileprivate let reference = GameDatabase.gameReference
     fileprivate let userReference = GameDatabase.userRefByName
     var hidersArray = [Player]()
@@ -59,6 +57,7 @@ class SeekersViewController: UITableViewController, Storyboarded {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let hider = hidersArray[indexPath.row]
         selectedHider = hider.name
-        coordinator?.goToCatchView(with: selectedHider)
+		guard let selectedHider = selectedHider else { return }
+			coordinator?.goToCatchView(with: selectedHider)
     }
 }

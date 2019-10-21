@@ -28,28 +28,28 @@ class ViewController: UIViewController, Storyboarded {
 
     func setup() {
 		Auth.auth().addStateDidChangeListener { [weak self] _, user in
-
-            guard let strongSelf = self else { return }
+            guard let self = self else { return }
             if let user = user {
                 print("User is signed in with uid:", user.uid)
-                if !strongSelf.didGoToNextView {
-                    strongSelf.coordinator?.goToChooseView()
+                if !self.didGoToNextView {
+                    self.coordinator?.goToChooseView()
                 }
-                strongSelf.didGoToNextView = true
+                self.didGoToNextView = true
             } else {
                 print("No user is signed in.")
-                strongSelf.didGoToNextView = false
+                self.didGoToNextView = false
             }
         }
     }
 
     @IBAction func loginTapped(_ sender: Any) {
-        let authUi = FUIAuth.defaultAuthUI()
-        assert(authUi != nil, "There should be a connection with the Firebase server.")
-        guard authUi != nil else { return }
-        authUi?.delegate = self
-        let authViewController = authUi!.authViewController()
+        let fireBaseAuthUI = FUIAuth.defaultAuthUI()
+        assert(fireBaseAuthUI != nil, "There should be a connection with the Firebase server.")
+        guard fireBaseAuthUI != nil else { return }
+        fireBaseAuthUI?.delegate = self
+		if let authViewController = fireBaseAuthUI?.authViewController() {
         present(authViewController, animated: true, completion: nil)
+		}
     }
 }
 

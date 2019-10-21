@@ -13,8 +13,7 @@ class CatchHiderViewController: UIViewController, Storyboarded, CLLocationManage
     weak var coordinator: MainCoordinator?
     let backgroundColor = BackgoundColorProvider()
     var hider = ""
-    var locationManager: CLLocationManager!
-
+    var locationManager: CLLocationManager?
     @IBOutlet var hidersColorOutlet: UIImageView!
     @IBOutlet var messageLabel: UILabel!
 
@@ -26,8 +25,8 @@ class CatchHiderViewController: UIViewController, Storyboarded, CLLocationManage
 
     func setup() {
         locationManager = CLLocationManager.init()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+        locationManager?.delegate = self
+        locationManager?.requestWhenInUseAuthorization()
         startScanningForBeaconRegion(beaconRegion: getBeaconRegion())
         hidersColorOutlet.backgroundColor = backgroundColor.randomColor()
         hidersColorOutlet.alpha = 0
@@ -38,18 +37,19 @@ class CatchHiderViewController: UIViewController, Storyboarded, CLLocationManage
         self.hider = ""
     }
 
-    func getBeaconRegion() -> CLBeaconRegion {
+    func getBeaconRegion() -> CLBeaconRegion? {
+		guard let proximityUUID = Player.proximityUUID else { return nil }
         let beaconRegion = CLBeaconRegion.init(
-			proximityUUID: UUID.init(
-				uuidString: "3187820A-0780-49E7-8F89-855B433BE32F")!,
+				proximityUUID: proximityUUID,
 				major: CodeTrimmers.setMajor(with: hider),
 				identifier: self.hider)
         return beaconRegion
     }
 
-    func startScanningForBeaconRegion(beaconRegion: CLBeaconRegion) {
-        locationManager.startMonitoring(for: beaconRegion)
-        locationManager.startRangingBeacons(in: beaconRegion)
+    func startScanningForBeaconRegion(beaconRegion: CLBeaconRegion?) {
+		guard let region = beaconRegion else { return }
+        locationManager?.startMonitoring(for: region)
+        locationManager?.startRangingBeacons(in: region)
     }
 
     // Delegate Methods for tracking beacons and changing the view
@@ -63,15 +63,15 @@ class CatchHiderViewController: UIViewController, Storyboarded, CLLocationManage
         case .immediate:
             self.hidersColorOutlet.alpha = 1
             self.messageLabel.textColor = .white
-            self.messageLabel.text = "\(hider) is here!"
+            self.messageLabel.text = "\(hider) is here."
         case .near:
             self.hidersColorOutlet.alpha = 0.6
             self.messageLabel.textColor = .white
-            self.messageLabel.text = "\(hider) is very close!"
+            self.messageLabel.text = "\(hider) is very close."
         case .far:
             self.hidersColorOutlet.alpha = 0.3
             self.messageLabel.textColor = .gray
-            self.messageLabel.text = "\(hider) is in range!"
+            self.messageLabel.text = "\(hider) is in range."
         @unknown default:
             fatalError()
         }
